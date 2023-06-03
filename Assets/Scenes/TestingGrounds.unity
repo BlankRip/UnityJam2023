@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.6187171, y: 0.024735434, z: -0.019496728, w: 0.7849824}
-  m_LocalPosition: {x: -1.4398797, y: 10.206087, z: -3.7670608}
+  m_LocalRotation: {x: 0.6166623, y: -0.002359709, z: 0.0018511488, w: 0.78722215}
+  m_LocalPosition: {x: 2.1752317, y: 19.97819, z: -2.3649259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -332,11 +332,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   hight: 10
-  wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
-  cellSize: 1
+  cellSize: 2
   floor: {fileID: 8894489790240712878, guid: 42ad2df96b61ac84d8e8c0d6911d07e8, type: 3}
   celing: {fileID: 0}
-  wallHight: 1
+  wallHight: 2
+  wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
   useSeed: 0
   seedValue: 0
 --- !u!4 &2130923950

@@ -29,6 +29,11 @@ namespace Gameplay.LevelGeneration
         private List<GameObject> floorTiles;
         Transform floorParent, celingParent, wallParent;
 
+        public List<GameObject> GetFloorTiles()
+        {
+            return floorTiles;
+        }
+
         private void Start()
         {
             if (useSeed)
