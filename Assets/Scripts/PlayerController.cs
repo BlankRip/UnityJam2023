@@ -5,14 +5,17 @@ using UnityEngine.InputSystem;
 
 namespace Gameplay
 {
-	public class PlayerMovement : MonoBehaviour
+	public class PlayerController : MonoBehaviour
 	{
 		InputAction playerMove;
+		InputAction interactAction;
 		CharacterController characterController;
 
 		[SerializeField] Transform playerMesh;
 		[SerializeField] private float moveSpeed;
 		[SerializeField] private float gravity;
+
+		private IInteractable interactableInRange;
 
 		private bool isGrounded;
 		private float currentSpeed;
@@ -27,6 +30,7 @@ namespace Gameplay
 			currentSpeed = moveSpeed;
 
 			playerMove = input.actions["Move"];
+			interactAction = input.actions["Interact"];
 
 			if(gravity > 0)
 			{
@@ -37,6 +41,7 @@ namespace Gameplay
 		{
 			GroundCheck();
 			Movement();
+			HandleInteractions();
 		}
 
 		private void GroundCheck()
@@ -65,6 +70,24 @@ namespace Gameplay
 				Quaternion targetRotation = Quaternion.LookRotation(playerDirection);
 				playerMesh.rotation = Quaternion.Lerp(playerMesh.rotation, targetRotation, Time.deltaTime * 10f);
 			}
+		}
+
+		private void HandleInteractions()
+		{
+			if(interactableInRange != null && interactAction.WasReleasedThisFrame())
+				interactableInRange.Interact(this);
+		}
+
+		public void SetInteractableInRange(IInteractable interactable)
+		{
+			if(interactableInRange != null)
+				interactableInRange = interactable;
+		}
+
+		public void ClearInteractableInRange(IInteractable clearCaller)
+		{
+			if(interactableInRange == clearCaller)
+				interactableInRange = null;
 		}
 	}
 }
