@@ -386,7 +386,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretTarget: {fileID: 0}
-  triggerCollider: {fileID: 8201636086106715719}
+  turretHead: {fileID: 565297333896148783}
   turretShootPoint: {fileID: 565297334650589768}
+  triggerCollider: {fileID: 8201636086106715719}
   rotationSpeed: 5
   isInteractable: 0
+  turretProjectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
+  turretProjectileSpeed: 5
