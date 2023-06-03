@@ -9,14 +9,15 @@ namespace Gameplay
     {
         private static PlayerInput playerInput;
 
-        public static PlayerInput GetPlayerInput()
+		private void Awake()
+		{
+			playerInput = GetComponent<PlayerInput>();
+		}
+
+		public static PlayerInput GetPlayerInput()
         {
             if(playerInput == null)
-            {
-                playerInput.GetComponent<PlayerInput>();
-                if(playerInput == null)
-                    Debug.LogError("Player input is not set, either not on scene or component not available on GO");
-            }
+                Debug.LogError("Player input is not set, either not on scene or component not available on GO");
             return playerInput;
         }
     }
