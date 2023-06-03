@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-	[SerializeField] GameObject turretTarget;
-	[SerializeField] SphereCollider triggerCollider;
+	[SerializeField] Transform turretTarget;
+	[SerializeField] Transform turretHead;
 	[SerializeField] Transform turretShootPoint;
+	[SerializeField] SphereCollider triggerCollider;
 
 	[SerializeField] private float rotationSpeed = 5f;
 	[SerializeField] private bool isInteractable;
@@ -15,17 +16,17 @@ public class TurretController : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject == turretTarget)
+		if(other.transform.gameObject == turretTarget.gameObject)
 		{
 			targetDetected = true;
 		}
 	}
 	private void OnTriggerExit(Collider other)
 	{
-		if(other.gameObject == turretTarget)
+		if(other.transform.gameObject == turretTarget.gameObject)
 		{
 			targetDetected = false;
-			Standby();
+			//Standby();
 		}
 	}
 
@@ -35,15 +36,28 @@ public class TurretController : MonoBehaviour
 		{
 			RotateTowardsTarget();
 		}
+		else
+		{
+			Standby();
+		}
 	}
 
 	private void RotateTowardsTarget()
 	{
 		Debug.Log("will rotate towards target");
+		if(turretTarget != null)
+		{
+			Vector3 targetDirection = turretTarget.position - turretHead.position;
+			targetDirection.y = 0f;
+			Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+			turretHead.rotation = Quaternion.Slerp(turretHead.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+		}
 	}
 	private void Standby()
 	{
 		Debug.Log("target has left the trigger area");
+		Quaternion initialRotation = Quaternion.identity;
+		turretHead.rotation = Quaternion.Slerp(turretHead.rotation, initialRotation, rotationSpeed * Time.deltaTime);
 	}
 
 
