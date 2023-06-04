@@ -18,7 +18,7 @@ namespace Gameplay.AI
         [Header("Turret shoot attributes")]
         [SerializeField] private GameObject turretProjectilePrefab;
         [SerializeField] private float turretProjectileSpeed;
-        [SerializeField] private float turretROF;
+        [SerializeField] private float turretTimeBetweenShots;
 
         private bool targetDetected = false;
 		private bool poweredUp = true;
@@ -95,20 +95,23 @@ namespace Gameplay.AI
                 {
 					float maxRaycastDistance = triggerCollider.radius;
                     RaycastHit hit;
-                    Vector3 rayDirection = turretTarget.position - turretShootPoint.position;
+                    Vector3 rayDirection = turretTarget.position - turretHead.position;
 
                     if (Physics.Raycast(turretShootPoint.position, rayDirection, out hit, maxRaycastDistance))
                     {
-                        GameObject turretProjectile = Instantiate(turretProjectilePrefab, turretShootPoint.position, turretShootPoint.rotation);
-                        Rigidbody projectileRB = turretProjectile.GetComponent<Rigidbody>();
-                        if (projectileRB != null)
-                        {
-                            projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
-                            Destroy(turretProjectile, 1.5f);
-                        }
+                        if(hit.collider.CompareTag("Player"))
+                            {
+                                GameObject turretProjectile = Instantiate(turretProjectilePrefab, turretShootPoint.position, turretShootPoint.rotation);
+                                Rigidbody projectileRB = turretProjectile.GetComponent<Rigidbody>();
+                                if (projectileRB != null)
+                                    {
+                                        projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
+                                        Destroy(turretProjectile, 1.5f);
+                                    }
+                            }
                     }
                 }
-                yield return new WaitForSeconds(turretROF / 100f);
+                yield return new WaitForSeconds(turretTimeBetweenShots / 100f);
             }
         }
 
