@@ -8,12 +8,17 @@ namespace Gameplay.LevelGeneration
     {
         private Transform startPoint;
         [SerializeField] ObjectPlacementConstrains endPoint;
-
+        [Space]
         [SerializeField] uint numberOfGodTurrets = 3;
         [SerializeField] ObjectPlacementConstrains turretPrefab;
-
+        [Space]
         [SerializeField] uint numberOfSheildPickUps = 2;
         [SerializeField] ObjectPlacementConstrains sheildPickupPrefab;
+        [Space]
+        [Header("Unlocking Player for Play")]
+        [SerializeField] GameObject blackScreen;
+        [SerializeField] Pause pauseObject;
+        [SerializeField] PlayerController playerObject;      
 
         private int startPointIndex;
         private List<int> openSlots;
@@ -36,9 +41,11 @@ namespace Gameplay.LevelGeneration
             tempList.Add(turretPrefab);
             PlaceItems(tempList, ref godTurretParent, numberOfGodTurrets);
 
-            // tempList.Clear();
-            // tempList.Add(sheildPickupPrefab);
-            // PlaceItems(tempList, ref sheildPickUpParent, numberOfSheildPickUps);
+            tempList.Clear();
+            tempList.Add(sheildPickupPrefab);
+            PlaceItems(tempList, ref sheildPickUpParent, numberOfSheildPickUps);
+
+            MakeGameReadyToPlay();
         }
 
         private void PlaceStartAndEnd()
@@ -120,6 +127,13 @@ namespace Gameplay.LevelGeneration
             }
 
             return true;
+        }
+
+        private void MakeGameReadyToPlay()
+        {
+            playerObject.transform.position = startPoint.position;
+            pauseObject.gameObject.SetActive(true);
+            blackScreen.SetActive(false);
         }
 
         private void CreateParentObjects()
