@@ -1944,7 +1944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
       propertyPath: turretROF
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
       propertyPath: turretHead
@@ -1961,6 +1961,10 @@ PrefabInstance:
     - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
       propertyPath: turretProjectileSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
+      propertyPath: turretTimeBetweenShots
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
