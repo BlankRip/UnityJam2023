@@ -25,12 +25,6 @@ namespace Gameplay.AI
 
         Transform turretTarget;
 
-		private UnityEngine.InputSystem.InputAction debugKey;
-		private void Start()
-		{
-			debugKey = InputProvider.GetPlayerInput().actions["X"];
-		}
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.transform.gameObject.CompareTag("Player"))
@@ -61,9 +55,6 @@ namespace Gameplay.AI
             {
                 Standby();
             }
-
-			if(debugKey.WasPressedThisFrame())
-				DeActivate();
         }
 
         private void RotateTowardsTarget()

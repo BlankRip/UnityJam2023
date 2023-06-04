@@ -137,7 +137,7 @@ namespace Gameplay.LevelGeneration
 
         private void MakeGameReadyToPlay()
         {
-            playerObject.transform.position = startPoint.position;
+            playerObject.TeleportPlayerToPosition(startPoint.position);
             pauseObject.gameObject.SetActive(true);
             blackScreen.SetActive(false);
             Destroy(GetComponent<MazeRenderer>());

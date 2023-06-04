@@ -89,5 +89,12 @@ namespace Gameplay
 			if(interactableInRange == clearCaller)
 				interactableInRange = null;
 		}
+
+		public void TeleportPlayerToPosition(Vector3 position)
+		{
+			characterController.enabled = false;
+			transform.position = position;
+			characterController.enabled = true;
+		}
 	}
 }

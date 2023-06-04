@@ -9,6 +9,7 @@ namespace Gameplay.UI
     {
         [SerializeField] GameObject pausePanel;
         [SerializeField] GameObject controlsPanel;
+        [SerializeField] GameObject gameOverPanel;
 
         private InputAction pauseAction;
 
@@ -21,6 +22,8 @@ namespace Gameplay.UI
 
         private void Update()
         {
+            if(gameOverPanel.activeSelf)
+                return;
             if(pauseAction.WasReleasedThisFrame())
             {
                 if(controlsPanel.activeSelf)
@@ -56,6 +59,7 @@ namespace Gameplay.UI
 
         public void ReturnToMainMenu()
         {
+            Time.timeScale = 1;
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }

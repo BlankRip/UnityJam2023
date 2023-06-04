@@ -10,6 +10,7 @@ namespace Gameplay.UI
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            Time.timeScale = 1;
         }
 
         public void ReturnToMainMenu()
