@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8312630792411503170}
   - component: {fileID: 8312630792411503171}
   - component: {fileID: 8312630792411503180}
+  - component: {fileID: 2747189485576591006}
+  - component: {fileID: 8762054497676485169}
   m_Layer: 0
   m_Name: EndPointDummy
   m_TagString: Untagged
@@ -98,3 +100,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistanceBtwObjs: 4
   placementOffset: {x: 0, y: 1, z: 0}
+--- !u!136 &2747189485576591006
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312630792411503181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 0.99999994
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8762054497676485169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312630792411503181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4da6fc5a1b7c64ea6a7fc3bef31c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
