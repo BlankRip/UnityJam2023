@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 565297335247787497}
   - component: {fileID: 8201636086106715719}
   - component: {fileID: 7048034872046330188}
+  - component: {fileID: 7309961877955390227}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -393,3 +394,17 @@ MonoBehaviour:
   isInteractable: 0
   turretProjectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
   turretProjectileSpeed: 5
+--- !u!114 &7309961877955390227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565297335247787496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53da9a08fe2fcb48bc2797245394ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceBtwObjs: 4
+  placementOffset: {x: 0, y: 0, z: 0}

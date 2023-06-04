@@ -80,7 +80,7 @@ namespace Gameplay
 
 		public void SetInteractableInRange(IInteractable interactable)
 		{
-			if(interactableInRange != null)
+			if(interactable != null)
 				interactableInRange = interactable;
 		}
 
