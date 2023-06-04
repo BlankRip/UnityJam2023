@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Gameplay
+namespace Gameplay.UI
 {
     public class Pause : MonoBehaviour
     {
