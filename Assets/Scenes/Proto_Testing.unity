@@ -1027,6 +1027,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018805229}
   m_CullTransparentMesh: 1
+--- !u!1 &1096115406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096115407}
+  - component: {fileID: 1096115408}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096115407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096115406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7896734, y: -5.153039, z: -0.35598326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1096115408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096115406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02eb721311c8e604ba636218cc21543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
+  pooledObjects: []
+  countToPool: 30
 --- !u!1 &1112599344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1433,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8393963912574860836, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.78506
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393963912574860836, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9543991
       objectReference: {fileID: 0}
@@ -1615,7 +1666,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: Press 'Interact Key' to Use Item
   turretMaterailsList: {fileID: 11400000, guid: c9854656c8de5404b98cbe0338dd91b3, type: 2}
-  linkedTurret: {fileID: 1911891340}
 --- !u!1 &1842775154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 695801235}
+  controlsPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
 --- !u!222 &1893069277
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2023,21 +2075,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
       propertyPath: turretTimeBetweenShots
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
---- !u!114 &1911891340 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
-  m_PrefabInstance: {fileID: 1911891339}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3bc790962eb414fbee2a883a6f5acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1963119981
 GameObject:
   m_ObjectHideFlags: 0

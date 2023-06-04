@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Gameplay.AI
 {
@@ -92,14 +93,16 @@ namespace Gameplay.AI
                     {
                         if(hit.collider.CompareTag("Player"))
                             {
-                                GameObject turretProjectile = Instantiate(turretProjectilePrefab, turretShootPoint.position, turretShootPoint.rotation);
-                                Rigidbody projectileRB = turretProjectile.GetComponent<Rigidbody>();
-                                if (projectileRB != null)
-                                    {
-                                        projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
-                                        Destroy(turretProjectile, 1.5f);
-                                    }
-                            }
+							    GameObject projectileObject = TurretProjectilePool.instance.GetPooledObject();
+
+							    projectileObject.transform.position = turretShootPoint.position;
+							    projectileObject.transform.rotation = Quaternion.identity;
+
+							    Rigidbody bulletRb = projectileObject.GetComponent<Rigidbody>();
+
+							    bulletRb.velocity = turretShootPoint.forward * turretProjectileSpeed;
+							    projectileObject.SetActive(true);
+						}
                     }
                 }
                 yield return new WaitForSeconds(turretTimeBetweenShots / 100f);
