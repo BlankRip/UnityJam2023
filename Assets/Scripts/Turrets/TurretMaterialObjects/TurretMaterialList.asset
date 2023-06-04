@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e08e2349f6c6684c9e85333ad5aee6f, type: 3}
+  m_Name: TurretMaterialList
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 2272d186641d8a747954b0a482a04e6c, type: 2}
+  - {fileID: 2100000, guid: 8985be7c8ec0a60419a0deb46e8df77f, type: 2}
+  - {fileID: 2100000, guid: c24b20f93f95fd342aaf409ef1f69d09, type: 2}
+  - {fileID: 2100000, guid: 6a396d46806775c4cbaa17418c5705a2, type: 2}
+  - {fileID: 2100000, guid: e76c2152e92781c4daf0f46572fe2864, type: 2}
+  InitialMaterialsList:
+  - {fileID: 2100000, guid: 2272d186641d8a747954b0a482a04e6c, type: 2}
+  - {fileID: 2100000, guid: 8985be7c8ec0a60419a0deb46e8df77f, type: 2}
+  - {fileID: 2100000, guid: c24b20f93f95fd342aaf409ef1f69d09, type: 2}
+  - {fileID: 2100000, guid: 6a396d46806775c4cbaa17418c5705a2, type: 2}
+  - {fileID: 2100000, guid: e76c2152e92781c4daf0f46572fe2864, type: 2}

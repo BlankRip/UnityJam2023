@@ -89,7 +89,7 @@ namespace Gameplay.AI
 
         IEnumerator ShootCoroutine()
         {
-            while(targetDetected) 
+            while(targetDetected && poweredUp) 
             {
                 if(turretShootPoint != null && triggerCollider != null)
                 {
@@ -113,6 +113,11 @@ namespace Gameplay.AI
                 }
                 yield return new WaitForSeconds(turretTimeBetweenShots / 100f);
             }
+        }
+
+        public void SetTurretColor(Material turretMat)
+        {
+            turretHead.gameObject.GetComponent<Renderer>().material = turretMat;
         }
 
 		public void DeActivate()
