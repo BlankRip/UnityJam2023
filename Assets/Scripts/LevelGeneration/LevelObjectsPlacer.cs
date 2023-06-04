@@ -28,8 +28,14 @@ namespace Gameplay.LevelGeneration
                 openSlots.Add(i);
 
             PlaceStartAndEnd();
-            PlaceItems(turretPrefab, numberOfGodTurrets);
-            //PlaceItems(sheildPickupPrefab, numberOfSheildPickUps);
+
+            List<ObjectPlacementConstrains> tempList = new List<ObjectPlacementConstrains>();
+            tempList.Add(turretPrefab);
+            PlaceItems(tempList, numberOfGodTurrets);
+
+            tempList.Clear();
+            tempList.Add(sheildPickupPrefab);
+            PlaceItems(tempList, numberOfSheildPickUps);
         }
 
         private void PlaceStartAndEnd()
@@ -48,40 +54,51 @@ namespace Gameplay.LevelGeneration
             openSlots.Remove(pickedIndex);
         }
 
-        private void PlaceItems(ObjectPlacementConstrains item, uint amount, bool canPlaceNearStart = false)
+        private void PlaceItems(List<ObjectPlacementConstrains> items, uint amount, bool oneOfAKind = false, bool canPlaceNearStart = false)
         {
             List<int> placedIndices = new List<int>();
             if(!canPlaceNearStart)
                 placedIndices.Add(startPointIndex);
-            int iterations = 0;
-            int maxPlacementIterations = 5;
             int pickedIndex = 0;
             ObjectPlacementConstrains spawnedItem;
             for (int i = 0; i < amount; i++)
             {
-                spawnedItem = Instantiate(item);
-                iterations = 0;
-                while (iterations < maxPlacementIterations)
+                int pickedItem = MazeGenerator.GetRandomFromRange(0, items.Count);
+                spawnedItem = Instantiate(items[pickedItem]);
+                if(TryPlaceItem(ref placedIndices, ref spawnedItem))
                 {
-                    pickedIndex = MazeGenerator.GetRandomFromRange(0, openSlots.Count);
-                    if(CanPlace(ref placedIndices, ref spawnedItem, pickedIndex))
-                    {
-                        spawnedItem.transform.position = floorTiles[pickedIndex].transform.position;
-                        spawnedItem.transform.position += spawnedItem.placementOffset;
-                        openSlots.RemoveAt(pickedIndex);
-                    }
-                    else
-                    {
-                        iterations++;
-                    }
+                    if(oneOfAKind)
+                        items.RemoveAt(pickedIndex);
                 }
-
-                if(iterations == maxPlacementIterations)
+                else
                 {
-                    Debug.Log($"Failed to place {item.gameObject.name}, after placing {i} number");
+                    Debug.Log($"Failed to place {spawnedItem.gameObject.name}, after placing {i} number");
                     break;
                 }
             }
+        }
+
+        private bool TryPlaceItem(ref List<int> placedIndices, ref ObjectPlacementConstrains spawnedItem)
+        {
+            int iterations = 0;
+            int maxPlacementIterations = 5;
+            int pickedIndex = 0;
+            while (iterations < maxPlacementIterations)
+            {
+                pickedIndex = MazeGenerator.GetRandomFromRange(0, openSlots.Count);
+                if(CanPlace(ref placedIndices, ref spawnedItem, pickedIndex))
+                {
+                    spawnedItem.transform.position = floorTiles[pickedIndex].transform.position;
+                    spawnedItem.transform.position += spawnedItem.placementOffset;
+                    openSlots.RemoveAt(pickedIndex);
+                    return true;
+                }
+                else
+                {
+                    iterations++;
+                }
+            }
+            return false;
         }
 
         private bool CanPlace(ref List<int> placedIndices, ref ObjectPlacementConstrains constrains, int pickedIndex)
