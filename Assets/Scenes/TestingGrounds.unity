@@ -785,6 +785,9 @@ MonoBehaviour:
   endPoint: {fileID: 8312630792411503180, guid: 69047e2b93819454f811dce04f946d8d, type: 3}
   numberOfGodTurrets: 6
   turretPrefab: {fileID: 7309961877955390227, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
+  materialObject: {fileID: 11400000, guid: c9854656c8de5404b98cbe0338dd91b3, type: 2}
+  numberOfMortalTurrets: 3
+  turretSwitchPrefab: {fileID: 0}
   numberOfSheildPickUps: 3
   sheildPickupPrefab: {fileID: 5143253790117851625, guid: 2f7670f8935b04940b768b2dcc1247c2, type: 3}
   blackScreen: {fileID: 1788007833}

@@ -8,6 +8,7 @@ namespace Gameplay.UI
     public class Pause : MonoBehaviour
     {
         [SerializeField] GameObject pausePanel;
+        [SerializeField] GameObject controlsPanel;
 
         private InputAction pauseAction;
 
@@ -22,11 +23,19 @@ namespace Gameplay.UI
         {
             if(pauseAction.WasReleasedThisFrame())
             {
-                if(pausePanel.activeSelf)
+                if(controlsPanel.activeSelf)
+                    ToggleControlsScreen();
+                else if(pausePanel.activeSelf)
                     ResumeGame();
                 else
                     PauseGame();
             }    
+        }
+
+        public void ToggleControlsScreen()
+        {
+            pausePanel.SetActive(!pausePanel.activeSelf);
+            controlsPanel.SetActive(!controlsPanel.activeSelf);
         }
 
         private void PauseGame()

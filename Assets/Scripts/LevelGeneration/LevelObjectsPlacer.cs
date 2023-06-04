@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gameplay.UI;
+using Gameplay.AI;
 
 namespace Gameplay.LevelGeneration
 {
@@ -12,6 +13,9 @@ namespace Gameplay.LevelGeneration
         [Space]
         [SerializeField] uint numberOfGodTurrets = 3;
         [SerializeField] ObjectPlacementConstrains turretPrefab;
+        [SerializeField] TurretMaterialObject materialObject;
+        [SerializeField] uint numberOfMortalTurrets = 3;
+        [SerializeField] ObjectPlacementConstrains turretSwitchPrefab;
         [Space]
         [SerializeField] uint numberOfSheildPickUps = 2;
         [SerializeField] ObjectPlacementConstrains sheildPickupPrefab;
@@ -29,6 +33,7 @@ namespace Gameplay.LevelGeneration
         public void PlaceObjects(MazeRenderer caller)
         {
             CreateParentObjects();
+            materialObject.ResetMaterialsList();
             startPoint = new GameObject("Start Point").transform;
             floorTiles = caller.GetFloorTiles();
             openSlots = new List<int>();

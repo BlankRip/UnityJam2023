@@ -7,7 +7,7 @@ using UnityEngine;
 using Gameplay.LevelGeneration;
 using System.Linq;
 
-namespace Gameplay
+namespace Gameplay.AI
 {
     public class TurretSwitch : InteractableBase
     {
