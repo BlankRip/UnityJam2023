@@ -2,22 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretProjectileHandler : MonoBehaviour
+namespace Gameplay.AI
 {
-	public float lifetime;
-
-	private float spawnTime;
-
-	private void OnEnable()
+	public class TurretProjectileHandler : MonoBehaviour
 	{
-		spawnTime = Time.time;
-	}
+		public float lifetime;
+		private float spawnTime;
 
-	private void Update()
-	{
-		if (Time.time - spawnTime >= lifetime)
+		private bool dealDamage = false;
+
+		private void OnEnable()
 		{
-			gameObject.SetActive(false);
+			spawnTime = Time.time;
+		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			if(other.gameObject.CompareTag("Player"))
+			{
+				dealDamage = true;
+				this.gameObject.SetActive(false);
+				dealDamage = false;
+			}
+		}
+
+		private void OnTriggerExit(Collider other)
+		{
+			if(other.gameObject.CompareTag("Player"))
+			{
+				this.gameObject.SetActive(false);
+				dealDamage= false;
+			}
+		}
+
+		private void Update()
+		{
+			if (Time.time - spawnTime >= lifetime)
+			{
+				gameObject.SetActive(false);
+			}
+		}
+
+		public bool GetDamageTriggerStatus()
+		{
+			return dealDamage;
 		}
 	}
 }

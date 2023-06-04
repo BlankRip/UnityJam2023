@@ -29,7 +29,16 @@ public class PlayerShieldHandler : MonoBehaviour
 			currentShield -= shieldDamageAmount;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
-			Debug.Log(currentShield);
+		}
+	}
+
+	public void IncreaseShieldAmount(int regenAmount)
+	{
+		int newShieldValue = currentShield + regenAmount;
+		if(newShieldValue <= maxShield) 
+		{
+			currentShield = newShieldValue;
+			shieldSlider.value = currentShield;
 		}
 	}
 

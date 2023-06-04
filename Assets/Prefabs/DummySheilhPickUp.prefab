@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5348298570923953373}
   - component: {fileID: 7795128471027289617}
   - component: {fileID: 5467720338671391528}
+  - component: {fileID: 7522424121872056894}
   - component: {fileID: 5143253790117851625}
+  - component: {fileID: 2777328011949279899}
   m_Layer: 0
   m_Name: DummySheilhPickUp
   m_TagString: Untagged
@@ -84,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7522424121872056894
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584210774075151834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5143253790117851625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,3 +113,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistanceBtwObjs: 8
   placementOffset: {x: 0, y: 1, z: 0}
+--- !u!114 &2777328011949279899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584210774075151834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8f6869106af9d49b3b0453cae3b027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldIncreaseAmount: 10

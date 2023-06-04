@@ -3,38 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class TurretProjectilePool : MonoBehaviour
+namespace Gameplay.AI
 {
-	public static TurretProjectilePool instance;
-
-	public GameObject projectilePrefab;
-	public List<GameObject> pooledObjects;
-	public int countToPool = 20;
-
-	private void Awake()
+	public class TurretProjectilePool : MonoBehaviour
 	{
-		if (instance == null)
-		{
-			instance = this;
-		}
-		pooledObjects = new List<GameObject>();
-		for (int i = 0; i < countToPool; i++)
-		{
-			GameObject instantiatedObject = Instantiate(projectilePrefab);
-			instantiatedObject.SetActive(false);
-			pooledObjects.Add(instantiatedObject);
-		}
-	}
+		public static TurretProjectilePool instance;
 
-	public GameObject GetPooledObject()
-	{
-		for (int i = 0; i < pooledObjects.Count; i++)
+		public GameObject projectilePrefab;
+		public List<GameObject> pooledObjects;
+		public int countToPool = 20;
+
+		private void Awake()
 		{
-			if (!pooledObjects[i].activeInHierarchy)
+			if (instance == null)
 			{
-				return pooledObjects[i];
+				instance = this;
+			}
+			pooledObjects = new List<GameObject>();
+			for (int i = 0; i < countToPool; i++)
+			{
+				GameObject instantiatedObject = Instantiate(projectilePrefab);
+				instantiatedObject.SetActive(false);
+				pooledObjects.Add(instantiatedObject);
 			}
 		}
-		return null;
+
+		public GameObject GetPooledObject()
+		{
+			for (int i = 0; i < pooledObjects.Count; i++)
+			{
+				if (!pooledObjects[i].activeInHierarchy)
+				{
+					return pooledObjects[i];
+				}
+			}
+			return null;
+		}
 	}
+
 }
