@@ -386,7 +386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3bc790962eb414fbee2a883a6f5acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretTarget: {fileID: 0}
   turretHead: {fileID: 565297333896148783}
   turretShootPoint: {fileID: 565297334650589768}
   triggerCollider: {fileID: 8201636086106715719}
@@ -394,6 +393,7 @@ MonoBehaviour:
   isInteractable: 0
   turretProjectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
   turretProjectileSpeed: 5
+  turretROF: 5
 --- !u!114 &7309961877955390227
 MonoBehaviour:
   m_ObjectHideFlags: 0

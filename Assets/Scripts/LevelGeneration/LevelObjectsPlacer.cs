@@ -25,11 +25,11 @@ namespace Gameplay.LevelGeneration
         private List<GameObject> floorTiles;
         private Transform startEndParent, godTurretParent, sheildPickUpParent, moralTurretParent;
 
-        private void Start()
+        public void PlaceObjects(MazeRenderer caller)
         {
             CreateParentObjects();
             startPoint = new GameObject("Start Point").transform;
-            floorTiles = GetComponent<MazeRenderer>().GetFloorTiles();
+            floorTiles = caller.GetFloorTiles();
             openSlots = new List<int>();
             openSlots.Capacity = floorTiles.Count;
             for (int i = 0; i < floorTiles.Count; i++)
@@ -134,6 +134,8 @@ namespace Gameplay.LevelGeneration
             playerObject.transform.position = startPoint.position;
             pauseObject.gameObject.SetActive(true);
             blackScreen.SetActive(false);
+            Destroy(GetComponent<MazeRenderer>());
+            Destroy(this);
         }
 
         private void CreateParentObjects()

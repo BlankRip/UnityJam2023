@@ -40,6 +40,8 @@ namespace Gameplay.LevelGeneration
                 CreateMazeAndGetFloorTiles(seedValue);
             else
                 CreateMazeAndGetFloorTiles(Random.Range(int.MinValue, int.MaxValue));
+            
+            GetComponent<LevelObjectsPlacer>().PlaceObjects(this);
         }
 
         public List<GameObject> CreateMazeAndGetFloorTiles(int seed)
