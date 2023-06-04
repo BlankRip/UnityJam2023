@@ -21,6 +21,13 @@ namespace Gameplay.AI
         [SerializeField] private float turretProjectileSpeed;
 
         private bool targetDetected = false;
+		private bool poweredUp = true;
+
+		private UnityEngine.InputSystem.InputAction debugKey;
+		private void Start()
+		{
+			debugKey = InputProvider.GetPlayerInput().actions["X"];
+		}
 
         private void OnTriggerEnter(Collider other)
         {
@@ -39,6 +46,9 @@ namespace Gameplay.AI
 
         private void Update()
         {
+			if(!poweredUp)
+				return;
+			
             if (targetDetected)
             {
                 RotateTowardsTarget();
@@ -48,6 +58,9 @@ namespace Gameplay.AI
             {
                 Standby();
             }
+
+			if(debugKey.WasPressedThisFrame())
+				DeActivate();
         }
 
         private void RotateTowardsTarget()
@@ -81,9 +94,15 @@ namespace Gameplay.AI
                     if (projectileRB != null)
                     {
                         projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
+						Destroy(turretProjectile, 1.5f);
                     }
                 }
             }
         }
+
+		public void DeActivate()
+		{
+			poweredUp = false;
+		}
     }
 }
