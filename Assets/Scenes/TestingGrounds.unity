@@ -1300,6 +1300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130923950}
   - component: {fileID: 2130923949}
+  - component: {fileID: 2130923951}
   m_Layer: 0
   m_Name: MazeGenerator
   m_TagString: Untagged
@@ -1343,6 +1344,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130923951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130923948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa224d61cb2a53d42af1d5b170b3480d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPoint: {fileID: 0}
+  numberOfGodTurrets: 3
+  turretPrefab: {fileID: 0}
+  numberOfSheildPickUps: 2
+  sheildPickupPrefab: {fileID: 0}
 --- !u!1001 &2057022756385682686
 PrefabInstance:
   m_ObjectHideFlags: 0

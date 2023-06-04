@@ -12,6 +12,8 @@ namespace Gameplay.LevelGeneration
     // be passed to the maze renderer in unity where these enums are used to generate the maze
     public static class MazeGenerator
     {
+        private static System.Random rng;
+
         public static WallState[,] Generate(uint width, uint hight, int seed)
         {
             WallState[,] maze = new WallState[width, hight];
@@ -29,7 +31,7 @@ namespace Gameplay.LevelGeneration
         private static void ApplyRecursiveBacktracker(ref WallState[,] maze, int width, int hight, int seed)
         {
             Stack<Vector2Int> needChecking = new Stack<Vector2Int>();
-            System.Random rng = new System.Random(seed);
+            rng = new System.Random(seed);
             Vector2Int pos = new Vector2Int(rng.Next(0, width), rng.Next(0, hight));
             maze[pos.x, pos.y] |= WallState.Visited;  // raising the visted flag
             needChecking.Push(pos);
@@ -98,6 +100,11 @@ namespace Gameplay.LevelGeneration
                 default:
                     return WallState.Left;
             }
+        }
+
+        public static int GetRandomFromRange(int min, int max)
+        {
+            return rng.Next(min, max);
         }
     }
 }
