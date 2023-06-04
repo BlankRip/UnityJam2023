@@ -1943,6 +1943,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
+      propertyPath: turretROF
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048034872046330188, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
       propertyPath: turretHead
       value: 
       objectReference: {fileID: 231952037}

@@ -7,7 +7,6 @@ namespace Gameplay.AI
     public class TurretController : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Transform turretTarget;
         [SerializeField] Transform turretHead;
         [SerializeField] Transform turretShootPoint;
         [SerializeField] SphereCollider triggerCollider;
@@ -19,9 +18,12 @@ namespace Gameplay.AI
         [Header("Turret shoot attributes")]
         [SerializeField] private GameObject turretProjectilePrefab;
         [SerializeField] private float turretProjectileSpeed;
+        [SerializeField] private float turretROF;
 
         private bool targetDetected = false;
 		private bool poweredUp = true;
+
+        Transform turretTarget;
 
 		private UnityEngine.InputSystem.InputAction debugKey;
 		private void Start()
@@ -33,7 +35,9 @@ namespace Gameplay.AI
         {
             if (other.transform.gameObject.CompareTag("Player"))
             {
+                turretTarget = other.transform;
                 targetDetected = true;
+                TurretShoot();
             }
         }
         private void OnTriggerExit(Collider other)
@@ -48,11 +52,10 @@ namespace Gameplay.AI
         {
 			if(!poweredUp)
 				return;
-			
+
             if (targetDetected)
             {
                 RotateTowardsTarget();
-                TurretShoot();
             }
             else
             {
@@ -81,22 +84,31 @@ namespace Gameplay.AI
 
         private void TurretShoot()
         {
-            if (turretShootPoint != null && triggerCollider != null)
-            {
-                float maxRaycastDistance = triggerCollider.radius;
-                RaycastHit hit;
-                Vector3 rayDirection = turretTarget.position - turretShootPoint.position;
+            StartCoroutine(ShootCoroutine());
+        }
 
-                if (Physics.Raycast(turretShootPoint.position, rayDirection, out hit, maxRaycastDistance))
+        IEnumerator ShootCoroutine()
+        {
+            while(targetDetected) 
+            {
+                if(turretShootPoint != null && triggerCollider != null)
                 {
-                    GameObject turretProjectile = Instantiate(turretProjectilePrefab, turretShootPoint.position, turretShootPoint.rotation);
-                    Rigidbody projectileRB = turretProjectile.GetComponent<Rigidbody>();
-                    if (projectileRB != null)
+					float maxRaycastDistance = triggerCollider.radius;
+                    RaycastHit hit;
+                    Vector3 rayDirection = turretTarget.position - turretShootPoint.position;
+
+                    if (Physics.Raycast(turretShootPoint.position, rayDirection, out hit, maxRaycastDistance))
                     {
-                        projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
-						Destroy(turretProjectile, 1.5f);
+                        GameObject turretProjectile = Instantiate(turretProjectilePrefab, turretShootPoint.position, turretShootPoint.rotation);
+                        Rigidbody projectileRB = turretProjectile.GetComponent<Rigidbody>();
+                        if (projectileRB != null)
+                        {
+                            projectileRB.velocity = turretShootPoint.forward * turretProjectileSpeed;
+                            Destroy(turretProjectile, 1.5f);
+                        }
                     }
                 }
+                yield return new WaitForSeconds(turretROF / 100f);
             }
         }
 
