@@ -10,15 +10,23 @@ namespace Gameplay.LevelGeneration
     {
         private Transform startPoint;
         [SerializeField] ObjectPlacementConstrains endPoint;
+
         [Space]
         [SerializeField] uint numberOfGodTurrets = 3;
         [SerializeField] ObjectPlacementConstrains turretPrefab;
         [SerializeField] TurretMaterialObject materialObject;
         [SerializeField] uint numberOfMortalTurrets = 3;
         [SerializeField] ObjectPlacementConstrains turretSwitchPrefab;
+
         [Space]
         [SerializeField] uint numberOfSheildPickUps = 2;
         [SerializeField] ObjectPlacementConstrains sheildPickupPrefab;
+
+        [Space]
+        [SerializeField] uint numberOfWeenies = 2;
+        [SerializeField] List<ObjectPlacementConstrains> weenieObjects;
+        [SerializeField] bool canPlaceWeenieNearStart;
+
         [Space]
         [Header("Unlocking Player for Play")]
         [SerializeField] GameObject blackScreen;
@@ -28,7 +36,7 @@ namespace Gameplay.LevelGeneration
         private int startPointIndex;
         private List<int> openSlots;
         private List<GameObject> floorTiles;
-        private Transform startEndParent, godTurretParent, sheildPickUpParent, moralTurretParent;
+        private Transform startEndParent, godTurretParent, sheildPickUpParent, moralTurretParent, weeniParent;
 
         public void PlaceObjects(MazeRenderer caller)
         {
@@ -52,7 +60,7 @@ namespace Gameplay.LevelGeneration
             PlaceItems(tempList, ref sheildPickUpParent, numberOfSheildPickUps);
 
             PlaceMortalTurrets(numberOfMortalTurrets);
-
+            PlaceItems(weenieObjects, ref weeniParent, numberOfWeenies, true, canPlaceWeenieNearStart);
             MakeGameReadyToPlay();
         }
 
@@ -184,18 +192,18 @@ namespace Gameplay.LevelGeneration
 
         private void CreateParentObjects()
         {
-            startEndParent = new GameObject("StartEndParent").transform;
-            startEndParent.parent = this.transform;
-            startEndParent.localPosition = Vector3.zero;
-            godTurretParent = new GameObject("GodTurretsParent").transform;
-            godTurretParent.parent = this.transform;
-            godTurretParent.localPosition = Vector3.zero;
-            sheildPickUpParent = new GameObject("SheildPickUpsParent").transform;
-            sheildPickUpParent.parent = this.transform;
-            sheildPickUpParent.localPosition = Vector3.zero;
-            moralTurretParent = new GameObject("MortalTurretParent").transform;
-            moralTurretParent.parent = this.transform;
-            moralTurretParent.localPosition = Vector3.zero;
+            CreatParentObjAndAttach(ref startEndParent, "StartEndParent");
+            CreatParentObjAndAttach(ref godTurretParent, "GodTurretsParent");
+            CreatParentObjAndAttach(ref sheildPickUpParent, "SheildPickUpsParent");
+            CreatParentObjAndAttach(ref moralTurretParent, "MortalTurretParent");
+            CreatParentObjAndAttach(ref weeniParent, "WeeniParent");
+        }
+
+        private void CreatParentObjAndAttach(ref Transform parentObj, string name)
+        {
+            parentObj = new GameObject(name).transform;
+            parentObj.parent = this.transform;
+            parentObj.localPosition = Vector3.zero;
         }
     }
 }

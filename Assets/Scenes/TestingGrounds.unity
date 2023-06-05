@@ -801,7 +801,7 @@ MonoBehaviour:
   celing: {fileID: 0}
   wallHight: 2
   wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
-  useSeed: 1
+  useSeed: 0
   seed: {fileID: 11400000, guid: ac16b5b8b9c434a469ecdf7278c6f6e0, type: 2}
 --- !u!4 &2130923950
 Transform:
@@ -836,8 +836,16 @@ MonoBehaviour:
   materialObject: {fileID: 11400000, guid: c9854656c8de5404b98cbe0338dd91b3, type: 2}
   numberOfMortalTurrets: 3
   turretSwitchPrefab: {fileID: 3615763680105203900, guid: 0b73aaac7cd356948bc4f935993c422a, type: 3}
-  numberOfSheildPickUps: 3
+  numberOfSheildPickUps: 2
   sheildPickupPrefab: {fileID: 5143253790117851625, guid: 2f7670f8935b04940b768b2dcc1247c2, type: 3}
+  numberOfWeenies: 3
+  weenieObjects:
+  - {fileID: 2832933109484888129, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}
+  - {fileID: 3078350785468751776, guid: 9d0c795f51270d54eaacfe2ae7aa50fc, type: 3}
+  - {fileID: 3797110057197957325, guid: b1f2a7bb127f17640b573009ceca0ec0, type: 3}
+  - {fileID: 6213647938856464935, guid: 7659d4cf757c7fa45bbf432db57c3a18, type: 3}
+  - {fileID: 8987520396863394041, guid: 8e86de25ad5f6d146bcf5fccd89f54dc, type: 3}
+  canPlaceWeenieNearStart: 0
   blackScreen: {fileID: 1788007833}
   pauseObject: {fileID: 1788007834}
   playerObject: {fileID: 1007137201}
