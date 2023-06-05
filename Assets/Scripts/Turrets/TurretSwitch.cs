@@ -19,12 +19,9 @@ namespace Gameplay.AI
 			linkedTurret.DeActivate();
 			base.Interact(caller);
 		}
-		public void SetLinkedTurret(TurretController turret)
+		public void SetUpSwitch(TurretController turret)
 		{
 			linkedTurret = turret;
-		}
-		public void SetupColor()
-		{
 			if(turretMaterailsList != null && turretMaterailsList.materials.Count > 0)
 			{
 				int randomIndex = MazeGenerator.GetRandomFromRange(0, turretMaterailsList.materials.Count);

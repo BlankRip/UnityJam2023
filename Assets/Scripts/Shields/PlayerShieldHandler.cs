@@ -5,70 +5,59 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerShieldHandler : MonoBehaviour
+namespace Gameplay
 {
-	[SerializeField] Slider shieldSlider;
-
-	[Header("Shield Attributes")]
-	[SerializeField] private int shieldDepletionAmount = 1;
-	[SerializeField] private int maxShield = 100;
-
-	private int currentShield;
-
-	private int shieldDamageAmount = 10;
-
-	private bool shieldCanBeActivated;
-
-	InputAction ShieldTriggerInput;
-
-	private void Start()
+	public class PlayerShieldHandler : MonoBehaviour
 	{
-		PlayerInput input = InputProvider.GetPlayerInput();
-		ShieldTriggerInput = input.actions["Shields"];
+		[SerializeField] Slider shieldSlider;
 
-		shieldCanBeActivated = true;
-		shieldSlider.maxValue = maxShield;
-		currentShield = maxShield;
-		shieldSlider.value = currentShield;
-	}
+		[Header("Shield Attributes")]
+		[SerializeField] private float shieldDepletionAmount = 1;
+		[SerializeField] private float maxShield = 100;
 
-	private void Update()
-	{
-		if(shieldCanBeActivated && ShieldTriggerInput.IsPressed())
+		private float currentShield;
+
+		InputAction ShieldTriggerInput;
+
+		private void Start()
 		{
-			currentShield -= shieldDepletionAmount;
-			currentShield = Mathf.Max(currentShield, 0);
+			PlayerInput input = InputProvider.GetPlayerInput();
+			ShieldTriggerInput = input.actions["Shields"];
+			shieldSlider = GameObject.FindGameObjectWithTag("Shield").GetComponent<Slider>();
+
+			shieldSlider.maxValue = maxShield;
+			currentShield = maxShield;
 			shieldSlider.value = currentShield;
 		}
-	}
 
-	public void ShieldTakeDamage()
-	{
-		if(shieldCanBeActivated && currentShield >= 1)
+		private void Update()
 		{
-			currentShield -= shieldDamageAmount;
-			currentShield = Mathf.Max(currentShield, 0);
-			shieldSlider.value = currentShield;
+			if(currentShield > 0.0f && ShieldTriggerInput.IsPressed())
+			{
+				currentShield -= shieldDepletionAmount * Time.deltaTime;
+				currentShield = Mathf.Max(currentShield, 0);
+				shieldSlider.value = currentShield;
+			}
 		}
-	}
 
-	public void IncreaseShieldAmount(int regenAmount)
-	{
-		if(currentShield != maxShield) 
-		{ 
-			int newShieldValue = currentShield + regenAmount;
-			currentShield = Mathf.Min(newShieldValue, maxShield);
-			shieldSlider.value = currentShield;
+		public void ShieldTakeDamage(float damage)
+		{
+			if(currentShield >= 1)
+			{
+				currentShield -= damage;
+				currentShield = Mathf.Max(currentShield, 0);
+				shieldSlider.value = currentShield;
+			}
 		}
-	}
 
-	public void SetShieldDamageAmount(int damageAmount)
-	{
-		shieldDamageAmount = damageAmount;
-	}
-
-	public bool GetShieldStatus()
-	{
-		return shieldCanBeActivated;
+		public void IncreaseShieldAmount(int regenAmount)
+		{
+			if(currentShield != maxShield) 
+			{ 
+				float newShieldValue = currentShield + regenAmount;
+				currentShield = Mathf.Min(newShieldValue, maxShield);
+				shieldSlider.value = currentShield;
+			}
+		}
 	}
 }

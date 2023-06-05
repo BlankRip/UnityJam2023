@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8525930390987274777}
   - component: {fileID: 8525930390987274778}
   - component: {fileID: 8525930390987274773}
+  - component: {fileID: 7101692670366140363}
   m_Layer: 0
   m_Name: TopDownPlayer
   m_TagString: Player
@@ -152,6 +153,21 @@ MonoBehaviour:
   playerMesh: {fileID: 8525930391278704359}
   moveSpeed: 10
   gravity: 20
+--- !u!114 &7101692670366140363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525930390987274782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cf0731de5a41444ab2b13c103e979d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldSlider: {fileID: 0}
+  shieldDepletionAmount: 1
+  maxShield: 60
 --- !u!1 &8525930391278704363
 GameObject:
   m_ObjectHideFlags: 0

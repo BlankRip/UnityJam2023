@@ -100,8 +100,7 @@ namespace Gameplay.LevelGeneration
                     if(TryPlaceItem(ref currentTurretIndex, ref spawnedItem, ref moralTurretParent))
                     {
                         TurretSwitch turretSwitch = spawnedItem.GetComponent<TurretSwitch>();
-                        turretSwitch.SetLinkedTurret(turret);
-                        turretSwitch.SetupColor();
+                        turretSwitch.SetUpSwitch(turret);
                     }
                     else
                     {

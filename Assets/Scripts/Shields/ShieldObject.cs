@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldObject : MonoBehaviour
+namespace Gameplay
 {
-	[SerializeField] int shieldIncreaseAmount;
-
-	private void OnTriggerEnter(Collider other)
+	public class ShieldObject : MonoBehaviour
 	{
-		if(other.gameObject.CompareTag("Player"))
+		[SerializeField] int shieldIncreaseAmount;
+
+		private void OnTriggerEnter(Collider other)
 		{
-			PlayerShieldHandler playerShield =  other.gameObject.GetComponent<PlayerShieldHandler>();
-			playerShield.IncreaseShieldAmount(shieldIncreaseAmount);
+			if(other.gameObject.CompareTag("Player"))
+			{
+				PlayerShieldHandler playerShield =  other.gameObject.GetComponent<PlayerShieldHandler>();
+				playerShield.IncreaseShieldAmount(shieldIncreaseAmount);
+			}
 		}
 	}
 }
