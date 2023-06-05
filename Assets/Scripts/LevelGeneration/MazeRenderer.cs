@@ -22,7 +22,8 @@ namespace Gameplay.LevelGeneration
         [Header("Useing Seed")]
         [SerializeField] bool useSeed = false;
         [Tooltip("Seed value is only considered if useSeed bool is ticked to true")]
-        [SerializeField] int seedValue;
+        [SerializeField] ScriptableInt seed;
+        //[SerializeField] int seedValue;
 
         private WallState[,] maze;
         private float halfCellSize;
@@ -37,7 +38,7 @@ namespace Gameplay.LevelGeneration
         private void Start()
         {
             if (useSeed)
-                CreateMazeAndGetFloorTiles(seedValue);
+                CreateMazeAndGetFloorTiles(seed.value);
             else
                 CreateMazeAndGetFloorTiles(Random.Range(int.MinValue, int.MaxValue));
             

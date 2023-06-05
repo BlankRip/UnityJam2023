@@ -1034,6 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 2483076674453722435}
   controlesPanel: {fileID: 1876622644}
+  seed: {fileID: 11400000, guid: ac16b5b8b9c434a469ecdf7278c6f6e0, type: 2}
 --- !u!224 &2483076674082232288
 RectTransform:
   m_ObjectHideFlags: 0

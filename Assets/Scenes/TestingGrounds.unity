@@ -600,6 +600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8816621472586344537, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130.86475
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
 --- !u!1 &1788007833 stripped
@@ -797,8 +801,8 @@ MonoBehaviour:
   celing: {fileID: 0}
   wallHight: 2
   wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
-  useSeed: 0
-  seedValue: 700
+  useSeed: 1
+  seed: {fileID: 11400000, guid: ac16b5b8b9c434a469ecdf7278c6f6e0, type: 2}
 --- !u!4 &2130923950
 Transform:
   m_ObjectHideFlags: 0

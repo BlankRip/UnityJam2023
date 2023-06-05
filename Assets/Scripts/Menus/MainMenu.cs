@@ -9,6 +9,7 @@ namespace Gameplay.UI
     {
         [SerializeField] GameObject mainMenuPanel;
         [SerializeField] GameObject controlesPanel;
+        [SerializeField] ScriptableInt seed;
 
         private void Start()
         {
@@ -29,6 +30,7 @@ namespace Gameplay.UI
 
         public void StartGameButton()
         {
+            seed.value = Random.Range(int.MinValue, int.MaxValue);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
