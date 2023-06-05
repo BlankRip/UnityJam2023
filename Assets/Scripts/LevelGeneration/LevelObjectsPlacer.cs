@@ -51,6 +51,8 @@ namespace Gameplay.LevelGeneration
             tempList.Add(sheildPickupPrefab);
             PlaceItems(tempList, ref sheildPickUpParent, numberOfSheildPickUps);
 
+            PlaceMortalTurrets(numberOfMortalTurrets);
+
             MakeGameReadyToPlay();
         }
 
@@ -70,6 +72,42 @@ namespace Gameplay.LevelGeneration
             spawnedEnd.transform.position += spawnedEnd.placementOffset;
             spawnedEnd.transform.parent = startEndParent;
             openSlots.Remove(pickedIndex);
+        }
+
+        private void PlaceMortalTurrets(uint amount)
+        {
+            List<int> placedTurretIndices = new List<int>();
+            List<int> currentTurretIndex = new List<int>();
+            placedTurretIndices.Add(startPointIndex);
+            ObjectPlacementConstrains spawnedItem;
+            for (int i = 0; i < amount; i++)
+            {
+                spawnedItem = Instantiate(turretPrefab);
+                if(TryPlaceItem(ref placedTurretIndices, ref spawnedItem, ref moralTurretParent))
+                {
+                    currentTurretIndex.Clear();
+                    currentTurretIndex.Add(placedTurretIndices[placedTurretIndices.Count - 1]);
+                    TurretController turret = spawnedItem.GetComponent<TurretController>();
+                    spawnedItem = Instantiate(turretSwitchPrefab);
+                    if(TryPlaceItem(ref currentTurretIndex, ref spawnedItem, ref moralTurretParent))
+                    {
+                        TurretSwitch turretSwitch = spawnedItem.GetComponent<TurretSwitch>();
+                        turretSwitch.SetLinkedTurret(turret);
+                        turretSwitch.SetupColor();
+                    }
+                    else
+                    {
+                        Debug.Log($"Failed to place switch for turret number {i}");
+                        Destroy(spawnedItem.gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log($"Failed to place {spawnedItem.gameObject.name}, after placing {i} number");
+                    Destroy(spawnedItem.gameObject);
+                    break;
+                }
+            }
         }
 
         private void PlaceItems(List<ObjectPlacementConstrains> items, ref Transform parent, uint amount, bool oneOfAKind = false, bool canPlaceNearStart = false)
