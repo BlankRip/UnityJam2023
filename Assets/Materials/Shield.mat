@@ -65,9 +65,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Displacement: 0.03
+    - _Displacement: 0.15
     - _DstBlend: 0
-    - _EdgeLength: 15
+    - _EdgeLength: 6.3
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -88,7 +88,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.4972766, g: 0.8402379, b: 0.8584906, a: 0.61960787}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HitColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HitPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _HitColor: {r: 0.31572622, g: 0.50782764, b: 0.5188679, a: 0.61960787}
+    - _HitPosition: {r: -0.30147964, g: -0.0587947, b: -0.39452913, a: 0}
     - _ShieldPatternColor: {r: 0.49411765, g: 0.827451, b: 0.69803923, a: 1}
   m_BuildTextureStacks: []
