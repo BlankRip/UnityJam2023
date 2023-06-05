@@ -4,17 +4,15 @@ using UnityEngine;
 
 namespace Gameplay
 {
-	public class ShieldObject : MonoBehaviour
+	public class ShieldObject : InteractableBase
 	{
 		[SerializeField] int shieldIncreaseAmount;
 
-		private void OnTriggerEnter(Collider other)
+		public override void Interact(PlayerController caller)
 		{
-			if(other.gameObject.CompareTag("Player"))
-			{
-				PlayerShieldHandler playerShield =  other.gameObject.GetComponent<PlayerShieldHandler>();
-				playerShield.IncreaseShieldAmount(shieldIncreaseAmount);
-			}
+			caller.GetComponent<PlayerShieldHandler>().IncreaseShieldAmount(shieldIncreaseAmount);
+			ClearInteractableFromPlayer(caller);
+			Destroy(this.gameObject);
 		}
 	}
 }

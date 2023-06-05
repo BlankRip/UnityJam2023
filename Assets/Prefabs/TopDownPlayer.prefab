@@ -165,9 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cf0731de5a41444ab2b13c103e979d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldSlider: {fileID: 0}
   shieldDepletionAmount: 1
-  maxShield: 100
+  maxShield: 30
 --- !u!1 &8525930391278704363
 GameObject:
   m_ObjectHideFlags: 0

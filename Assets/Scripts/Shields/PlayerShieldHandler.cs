@@ -8,16 +8,13 @@ using UnityEngine.UI;
 public class PlayerShieldHandler : MonoBehaviour
 {
 	[Header("Shield Attributes")]
-	[SerializeField] private int shieldDepletionAmount = 1;
-	[SerializeField] private int maxShield = 100;
+	[SerializeField] private float shieldDepletionAmount = 1;
+	[SerializeField] private float maxShield = 100;
 
 	private Slider shieldSlider;
 
-	private int currentShield;
+	private float currentShield;
 
-	private int shieldDamageAmount = 10;
-
-	private bool shieldCanBeActivated;
 
 	InputAction ShieldTriggerInput;
 
@@ -26,8 +23,7 @@ public class PlayerShieldHandler : MonoBehaviour
 		PlayerInput input = InputProvider.GetPlayerInput();
 		ShieldTriggerInput = input.actions["Shields"];
 
-
-		shieldCanBeActivated = true;
+		shieldSlider = GameObject.FindGameObjectWithTag("Shield").GetComponent<Slider>();
 		shieldSlider.maxValue = maxShield;
 		currentShield = maxShield;
 		shieldSlider.value = currentShield;
@@ -35,19 +31,19 @@ public class PlayerShieldHandler : MonoBehaviour
 
 	private void Update()
 	{
-		if(shieldCanBeActivated && ShieldTriggerInput.IsPressed())
+		if(currentShield > 0.0f && ShieldTriggerInput.IsPressed())
 		{
-			currentShield -= shieldDepletionAmount;
+			currentShield -= shieldDepletionAmount * Time.deltaTime;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
 		}
 	}
 
-	public void ShieldTakeDamage()
+	public void ShieldTakeDamage(float damage)
 	{
-		if(shieldCanBeActivated && currentShield >= 1)
+		if(currentShield >= 1)
 		{
-			currentShield -= shieldDamageAmount;
+			currentShield -= damage;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
 		}
@@ -57,19 +53,9 @@ public class PlayerShieldHandler : MonoBehaviour
 	{
 		if(currentShield != maxShield) 
 		{ 
-			int newShieldValue = currentShield + regenAmount;
+			float newShieldValue = currentShield + regenAmount;
 			currentShield = Mathf.Min(newShieldValue, maxShield);
 			shieldSlider.value = currentShield;
 		}
-	}
-
-	public void SetShieldDamageAmount(int damageAmount)
-	{
-		shieldDamageAmount = damageAmount;
-	}
-
-	public bool GetShieldStatus()
-	{
-		return shieldCanBeActivated;
 	}
 }
