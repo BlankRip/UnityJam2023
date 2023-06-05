@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerShieldHandler : MonoBehaviour
 {
 	[Header("Shield Attributes")]
+	[SerializeField] private GameObject shieldGameObject;
 	[SerializeField] private float shieldDepletionAmount = 1;
 	[SerializeField] private float maxShield = 100;
 
@@ -27,15 +28,23 @@ public class PlayerShieldHandler : MonoBehaviour
 		shieldSlider.maxValue = maxShield;
 		currentShield = maxShield;
 		shieldSlider.value = currentShield;
+
+		shieldGameObject.SetActive(false);
 	}
 
 	private void Update()
 	{
 		if(currentShield > 0.0f && ShieldTriggerInput.IsPressed())
 		{
+			shieldGameObject.SetActive(true);
+
 			currentShield -= shieldDepletionAmount * Time.deltaTime;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
+		}
+		else
+		{
+			shieldGameObject.SetActive(false);
 		}
 	}
 
