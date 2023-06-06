@@ -15,7 +15,10 @@ public class PlayerShieldHandler : MonoBehaviour
 	private Slider shieldSlider;
 
 	private float currentShield;
+	private float sizeLerpTime;
 
+	Vector3 initialSize;
+	Vector3 targetSize;
 
 	InputAction ShieldTriggerInput;
 
@@ -29,6 +32,9 @@ public class PlayerShieldHandler : MonoBehaviour
 		currentShield = maxShield;
 		shieldSlider.value = currentShield;
 
+		initialSize = shieldGameObject.transform.localScale;
+		targetSize = new Vector3(4.36f, 4.36f, 4.36f);
+
 		shieldGameObject.SetActive(false);
 	}
 
@@ -38,14 +44,31 @@ public class PlayerShieldHandler : MonoBehaviour
 		{
 			shieldGameObject.SetActive(true);
 
+			ShieldOn();
+
 			currentShield -= shieldDepletionAmount * Time.deltaTime;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
+
+
 		}
-		else
+		else if (currentShield <= 0.0f && ShieldTriggerInput.WasReleasedThisFrame() || !ShieldTriggerInput.IsPressed())
 		{
+			ShieldOff();
 			shieldGameObject.SetActive(false);
 		}
+	}
+
+	private void ShieldOn()
+	{
+		sizeLerpTime += Time.deltaTime;
+		shieldGameObject.transform.localScale = Vector3.Lerp(initialSize, targetSize, sizeLerpTime);
+	}
+
+	private void ShieldOff()
+	{
+		sizeLerpTime += Time.deltaTime;
+		shieldGameObject.transform.localScale = Vector3.Lerp(targetSize, initialSize, sizeLerpTime);
 	}
 
 	public void ShieldTakeDamage(float damage)

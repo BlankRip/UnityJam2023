@@ -72,7 +72,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HitSize: 0.2
-    - _HitTime: 0
+    - _HitTime: 220
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -88,7 +88,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.4972766, g: 0.8402379, b: 0.8584906, a: 0.61960787}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HitColor: {r: 0.31572622, g: 0.50782764, b: 0.5188679, a: 0.61960787}
-    - _HitPosition: {r: -0.30147964, g: -0.0587947, b: -0.39452913, a: 0}
+    - _HitColor: {r: 0.2009167, g: 0.4056604, b: 0.30901715, a: 0.83137256}
+    - _HitPosition: {r: 0.082763776, g: -0.0398693, b: -0.4914881, a: 0}
     - _ShieldPatternColor: {r: 0.49411765, g: 0.827451, b: 0.69803923, a: 1}
   m_BuildTextureStacks: []
