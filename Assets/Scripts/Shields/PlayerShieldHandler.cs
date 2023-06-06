@@ -11,13 +11,15 @@ public class PlayerShieldHandler : MonoBehaviour
 	[SerializeField] private GameObject shieldGameObject;
 	[SerializeField] private float shieldDepletionAmount = 1;
 	[SerializeField] private float maxShield = 100;
+	[SerializeField] float lerpSpeed = 10;
 
 	private Slider shieldSlider;
 
 	private float currentShield;
-	private float sizeLerpTime;
 
-	Vector3 initialSize;
+	private bool lerpComplete;
+
+	Vector3 initialSize, activeSize;
 	Vector3 targetSize;
 
 	InputAction ShieldTriggerInput;
@@ -33,42 +35,37 @@ public class PlayerShieldHandler : MonoBehaviour
 		shieldSlider.value = currentShield;
 
 		initialSize = shieldGameObject.transform.localScale;
-		targetSize = new Vector3(4.36f, 4.36f, 4.36f);
+		activeSize = new Vector3(4.36f, 4.36f, 4.36f);
 
-		shieldGameObject.SetActive(false);
+		lerpComplete = true;
 	}
 
 	private void Update()
 	{
 		if(currentShield > 0.0f && ShieldTriggerInput.IsPressed())
 		{
-			shieldGameObject.SetActive(true);
-
-			ShieldOn();
+			if(ShieldTriggerInput.WasPressedThisFrame())
+			{
+				targetSize = activeSize;
+				lerpComplete = false;
+			}
 
 			currentShield -= shieldDepletionAmount * Time.deltaTime;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
-
-
 		}
-		else if (currentShield <= 0.0f && ShieldTriggerInput.WasReleasedThisFrame() || !ShieldTriggerInput.IsPressed())
+		else if (ShieldTriggerInput.WasReleasedThisFrame())
 		{
-			ShieldOff();
-			shieldGameObject.SetActive(false);
+			targetSize = initialSize;
+			lerpComplete = false;
 		}
-	}
 
-	private void ShieldOn()
-	{
-		sizeLerpTime += Time.deltaTime;
-		shieldGameObject.transform.localScale = Vector3.Lerp(initialSize, targetSize, sizeLerpTime);
-	}
-
-	private void ShieldOff()
-	{
-		sizeLerpTime += Time.deltaTime;
-		shieldGameObject.transform.localScale = Vector3.Lerp(targetSize, initialSize, sizeLerpTime);
+		if(lerpComplete)
+			return;
+		shieldGameObject.transform.localScale = Vector3.Lerp(shieldGameObject.transform.localScale , targetSize, lerpSpeed * Time.deltaTime);
+		float distance = (shieldGameObject.transform.localScale - targetSize).sqrMagnitude;
+		if(distance < 0.03 * 0.03)
+			lerpComplete = true;
 	}
 
 	public void ShieldTakeDamage(float damage)

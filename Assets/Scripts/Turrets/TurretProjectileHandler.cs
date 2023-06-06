@@ -16,7 +16,7 @@ namespace Gameplay.AI
 			spawnTime = Time.time;
 		}
 
-		private void OnTriggerEnter(Collider other)
+		private void OnCollisionEnter(Collision other)
 		{
 			if(other.gameObject.CompareTag("Player"))
 			{
@@ -26,7 +26,7 @@ namespace Gameplay.AI
 			}
 		}
 
-		private void OnTriggerExit(Collider other)
+		private void OnCollisionExit(Collision other) 
 		{
 			if(other.gameObject.CompareTag("Player"))
 			{
