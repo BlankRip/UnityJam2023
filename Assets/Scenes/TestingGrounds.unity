@@ -784,10 +784,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 13
   hight: 13
-  cellSize: 2
+  cellSize: 8
   floor: {fileID: 8894489790240712878, guid: 42ad2df96b61ac84d8e8c0d6911d07e8, type: 3}
   celing: {fileID: 0}
-  wallHight: 2
+  wallHight: 4
   wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
   useSeed: 0
   seed: {fileID: 11400000, guid: ac16b5b8b9c434a469ecdf7278c6f6e0, type: 2}
