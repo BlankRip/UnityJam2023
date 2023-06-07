@@ -25,6 +25,7 @@ namespace Gameplay.AI
 		private bool poweredUp = true;
 
         Transform turretTarget;
+        AudioSource turretAudioSource;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -43,7 +44,12 @@ namespace Gameplay.AI
             }
         }
 
-        private void Update()
+		private void Start()
+		{
+			turretAudioSource = GetComponent<AudioSource>();
+		}
+
+		private void Update()
         {
 			if(!poweredUp)
 				return;
@@ -93,6 +99,7 @@ namespace Gameplay.AI
                     {
                         if(hit.collider.CompareTag("Player"))
                             {
+                                turretAudioSource.PlayOneShot(turretAudioSource.clip);
 							    GameObject projectileObject = TurretProjectilePool.instance.GetPooledObject();
 
 							    projectileObject.transform.position = turretShootPoint.position;
@@ -102,6 +109,7 @@ namespace Gameplay.AI
 
 							    bulletRb.velocity = turretShootPoint.forward * turretProjectileSpeed;
 							    projectileObject.SetActive(true);
+
 						}
                     }
                 }

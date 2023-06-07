@@ -28,7 +28,7 @@ public class PlayerShieldHandler : MonoBehaviour
 	InputAction ShieldTriggerInput;
 
 	private void Start()
-	{
+		{
 		PlayerInput input = InputProvider.GetPlayerInput();
 		ShieldTriggerInput = input.actions["Shields"];
 
@@ -38,7 +38,7 @@ public class PlayerShieldHandler : MonoBehaviour
 		shieldSlider.value = currentShield;
 
 		initialSize = shieldGameObject.transform.localScale;
-		activeSize = new Vector3(4.36f, 4.36f, 4.36f);
+		activeSize = new Vector3(4.35f, 4.35f, 4.35f);
 
 		lerpComplete = true;
 	}

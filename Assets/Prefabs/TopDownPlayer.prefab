@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5247222325668778045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8525930390987274777}
@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8525930390752425440}
   - component: {fileID: 8525930390752425441}
-  - component: {fileID: 8525930390752425446}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -191,14 +190,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8525930390752425446
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8525930390752425447}
-  m_Enabled: 1
 --- !u!1 &8525930390987274782
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +202,7 @@ GameObject:
   - component: {fileID: 8525930390987274778}
   - component: {fileID: 8525930390987274773}
   - component: {fileID: 7527757882180904181}
+  - component: {fileID: 4057351928420903761}
   m_Layer: 0
   m_Name: TopDownPlayer
   m_TagString: Player
@@ -291,6 +283,14 @@ MonoBehaviour:
   offAudio:
     mixerGroup: {fileID: -6147095263347948559, guid: 11583ef3e207e0840b3ea48c6d769349, type: 2}
     clip: {fileID: 8300000, guid: 0a1b842a92f3d6d4e92760dbf525182d, type: 3}
+--- !u!81 &4057351928420903761
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525930390987274782}
+  m_Enabled: 1
 --- !u!1 &8525930391278704363
 GameObject:
   m_ObjectHideFlags: 0
