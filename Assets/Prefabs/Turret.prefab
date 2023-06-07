@@ -391,8 +391,10 @@ MonoBehaviour:
   turretShootPoint: {fileID: 565297334650589768}
   triggerCollider: {fileID: 8201636086106715719}
   rotationSpeed: 3
-  isInteractable: 0
   turretProjectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
   turretProjectileSpeed: 20
   turretTimeBetweenShots: 12
 --- !u!114 &7309961877955390227

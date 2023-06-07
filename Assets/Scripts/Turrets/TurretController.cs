@@ -14,10 +14,10 @@ namespace Gameplay.AI
 
         [Header("Turret main attributes")]
         [SerializeField] private float rotationSpeed = 5f;
-        [SerializeField] private bool isInteractable;
 
         [Header("Turret shoot attributes")]
         [SerializeField] private GameObject turretProjectilePrefab;
+        [SerializeField] LayerMask raycastLayerMask;
         [SerializeField] private float turretProjectileSpeed;
         [SerializeField] private float turretTimeBetweenShots;
 
@@ -89,7 +89,7 @@ namespace Gameplay.AI
                     RaycastHit hit;
                     Vector3 rayDirection = turretTarget.position - turretHead.position;
 
-                    if (Physics.Raycast(turretShootPoint.position, rayDirection, out hit, maxRaycastDistance))
+                    if (Physics.Raycast(turretShootPoint.position, rayDirection, out hit, maxRaycastDistance, raycastLayerMask))
                     {
                         if(hit.collider.CompareTag("Player"))
                             {
