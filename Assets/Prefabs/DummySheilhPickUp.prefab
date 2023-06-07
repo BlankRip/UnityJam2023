@@ -127,3 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: Press 'Interact Key' to Get Sheild Charge
   shieldIncreaseAmount: 8
+  pickUpAudio:
+    mixerGroup: {fileID: -6147095263347948559, guid: 11583ef3e207e0840b3ea48c6d769349, type: 2}
+    clip: {fileID: 8300000, guid: 60a47225eaa0ce6409ffb90aa7111109, type: 3}

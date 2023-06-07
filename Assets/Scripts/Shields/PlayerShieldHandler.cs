@@ -13,6 +13,9 @@ public class PlayerShieldHandler : MonoBehaviour
 	[SerializeField] private float maxShield = 100;
 	[SerializeField] float lerpSpeed = 10;
 
+	[SerializeField] AudioData onAudio;
+	[SerializeField] AudioData offAudio;
+
 	private Slider shieldSlider;
 
 	private float currentShield;
@@ -48,6 +51,7 @@ public class PlayerShieldHandler : MonoBehaviour
 			{
 				targetSize = activeSize;
 				lerpComplete = false;
+				Sound2D.Instance.PlayOneShotAudio(onAudio);
 			}
 
 			currentShield -= shieldDepletionAmount * Time.deltaTime;
@@ -58,6 +62,7 @@ public class PlayerShieldHandler : MonoBehaviour
 		{
 			targetSize = initialSize;
 			lerpComplete = false;
+			Sound2D.Instance.PlayOneShotAudio(offAudio);
 		}
 
 		if(lerpComplete)

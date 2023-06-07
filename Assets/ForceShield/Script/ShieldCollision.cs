@@ -6,6 +6,7 @@ public class ShieldCollision : MonoBehaviour
 {
 
     [SerializeField] string[] _collisionTag;
+    [SerializeField] AudioData hitAudio;
     float hitTime;
     Material mat;
 
@@ -48,6 +49,7 @@ public class ShieldCollision : MonoBehaviour
                     hitTime = 500;
                     mat.SetFloat("_HitTime", hitTime);
                 }
+                Sound2D.Instance.PlayOneShotAudio(hitAudio);
             }
         }
     }

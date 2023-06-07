@@ -113,6 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: Press 'Interact Key' to Turn Off Connected Turret
   turretMaterailsList: {fileID: 11400000, guid: c9854656c8de5404b98cbe0338dd91b3, type: 2}
+  turretPowerDownAudio:
+    mixerGroup: {fileID: -6147095263347948559, guid: 11583ef3e207e0840b3ea48c6d769349, type: 2}
+    clip: {fileID: 8300000, guid: 6523689414b558a42a32b3ffff8b8d0e, type: 3}
 --- !u!114 &3615763680105203900
 MonoBehaviour:
   m_ObjectHideFlags: 0

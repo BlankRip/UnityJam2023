@@ -1,6 +1,5 @@
 using Gameplay;
 using Gameplay.AI;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +10,17 @@ namespace Gameplay.AI
 {
     public class TurretSwitch : InteractableBase
     {
-		[SerializeField] private TurretMaterialObject turretMaterailsList;
-		private TurretController linkedTurret;
+		[SerializeField] TurretMaterialObject turretMaterailsList;
+		[SerializeField] AudioData turretPowerDownAudio;
+		
+		[Header("Only assign for debugging")]
+		[SerializeField] private TurretController linkedTurret;
 
 		public override void Interact(PlayerController caller)
 		{
 			linkedTurret.DeActivate();
 			base.Interact(caller);
+			Sound2D.Instance.PlayOneShotAudio(turretPowerDownAudio);
 		}
 		public void SetUpSwitch(TurretController turret)
 		{
