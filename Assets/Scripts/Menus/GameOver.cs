@@ -33,12 +33,14 @@ namespace Gameplay.UI
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Sound2D.Instance.PlayButtonAudio();
         }
 
         public void ReturnToMainMenu()
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(0);
+            Sound2D.Instance.PlayButtonAudio();
         }
     }
 }

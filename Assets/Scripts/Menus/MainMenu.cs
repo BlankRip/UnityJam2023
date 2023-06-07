@@ -21,10 +21,12 @@ namespace Gameplay.UI
         {
             controlesPanel.SetActive(true);
             mainMenuPanel.SetActive(false);
+            Sound2D.Instance.PlayButtonAudio();
         }
 
         public void QuitButton()
         {
+            Sound2D.Instance.PlayButtonAudio();
             Application.Quit();
         }
 
@@ -32,12 +34,14 @@ namespace Gameplay.UI
         {
             seed.value = Random.Range(int.MinValue, int.MaxValue);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Sound2D.Instance.PlayButtonAudio();
         }
 
         public void BackToMenu()
         {
             mainMenuPanel.SetActive(true);
             controlesPanel.SetActive(false);
+            Sound2D.Instance.PlayButtonAudio();
         }
     }
 }

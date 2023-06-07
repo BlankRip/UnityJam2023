@@ -9,6 +9,7 @@ namespace Gameplay
     public class DebugingScript : MonoBehaviour
     {
         private InputAction debugAction;
+        [SerializeField] AudioData testData;
 
         private void Start()
         {
@@ -18,7 +19,7 @@ namespace Gameplay
         private void Update()
         {
             if(debugAction.WasReleasedThisFrame())
-                GameOver.Instance.EndGame();
+                Sound2D.Instance.PlayOneShotAudio(testData);
         }
     }
 }

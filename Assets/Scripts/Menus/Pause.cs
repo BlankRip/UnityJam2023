@@ -39,6 +39,7 @@ namespace Gameplay.UI
         {
             pausePanel.SetActive(!pausePanel.activeSelf);
             controlsPanel.SetActive(!controlsPanel.activeSelf);
+            Sound2D.Instance.PlayButtonAudio();
         }
 
         private void PauseGame()
@@ -55,12 +56,14 @@ namespace Gameplay.UI
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             pausePanel.SetActive(false);
+            Sound2D.Instance.PlayButtonAudio();
         }
 
         public void ReturnToMainMenu()
         {
             Time.timeScale = 1;
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            Sound2D.Instance.PlayButtonAudio();
         }
     }
 }

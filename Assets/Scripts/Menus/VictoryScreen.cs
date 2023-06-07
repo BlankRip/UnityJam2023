@@ -16,6 +16,7 @@ namespace Gameplay.UI
         public void ReturnToMainMenu()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            Sound2D.Instance.PlayButtonAudio();
         }
     }
 }
