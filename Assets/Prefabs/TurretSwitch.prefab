@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   turretPowerDownAudio:
     mixerGroup: {fileID: -6147095263347948559, guid: 11583ef3e207e0840b3ea48c6d769349, type: 2}
     clip: {fileID: 8300000, guid: 6523689414b558a42a32b3ffff8b8d0e, type: 3}
+  linkedTurret: {fileID: 0}
 --- !u!114 &3615763680105203900
 MonoBehaviour:
   m_ObjectHideFlags: 0

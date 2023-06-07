@@ -54,14 +54,14 @@ PrefabInstance:
     - target: {fileID: 1604397271280765095, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3c46bea743fff1e4497a52687251f34d, type: 2}
+      objectReference: {fileID: 2100000, guid: 12203da34acee294d8e673a81315c6c2, type: 2}
     - target: {fileID: 5526456703504937299, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6a396d46806775c4cbaa17418c5705a2, type: 2}
+      objectReference: {fileID: 2100000, guid: ef6d2fe5b0a755b41b4393c187b2ecf4, type: 2}
     - target: {fileID: 7471100583601555283, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}
       propertyPath: m_Name
-      value: D_DummyWeeni
+      value: D_DummyWeeni Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}

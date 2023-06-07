@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: TurretMaterialList
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 2100000, guid: 2272d186641d8a747954b0a482a04e6c, type: 2}
-  - {fileID: 2100000, guid: 8985be7c8ec0a60419a0deb46e8df77f, type: 2}
-  - {fileID: 2100000, guid: c24b20f93f95fd342aaf409ef1f69d09, type: 2}
-  - {fileID: 2100000, guid: 6a396d46806775c4cbaa17418c5705a2, type: 2}
-  - {fileID: 2100000, guid: e76c2152e92781c4daf0f46572fe2864, type: 2}
+  - {fileID: 2100000, guid: 8e2c30c3106110a499efacbfde0d81d5, type: 2}
+  - {fileID: 2100000, guid: e67a828b0ecc96f428cd06196bf07264, type: 2}
+  - {fileID: 2100000, guid: 70bb277a0afcf744e957e50049790a5f, type: 2}
+  - {fileID: 2100000, guid: ef6d2fe5b0a755b41b4393c187b2ecf4, type: 2}
+  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
   InitialMaterialsList:
-  - {fileID: 2100000, guid: 2272d186641d8a747954b0a482a04e6c, type: 2}
-  - {fileID: 2100000, guid: 8985be7c8ec0a60419a0deb46e8df77f, type: 2}
-  - {fileID: 2100000, guid: c24b20f93f95fd342aaf409ef1f69d09, type: 2}
-  - {fileID: 2100000, guid: 6a396d46806775c4cbaa17418c5705a2, type: 2}
-  - {fileID: 2100000, guid: e76c2152e92781c4daf0f46572fe2864, type: 2}
+  - {fileID: 2100000, guid: 8e2c30c3106110a499efacbfde0d81d5, type: 2}
+  - {fileID: 2100000, guid: e67a828b0ecc96f428cd06196bf07264, type: 2}
+  - {fileID: 2100000, guid: 70bb277a0afcf744e957e50049790a5f, type: 2}
+  - {fileID: 2100000, guid: ef6d2fe5b0a755b41b4393c187b2ecf4, type: 2}
+  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
