@@ -151,7 +151,7 @@ namespace Gameplay.LevelGeneration
                 pickedIndex = MazeGenerator.GetRandomFromRange(0, openSlots.Count);
                 if(CanPlace(ref placedIndices, ref spawnedItem, pickedIndex))
                 {
-                    spawnedItem.transform.position = floorTiles[pickedIndex].transform.position;
+                    spawnedItem.transform.position = floorTiles[openSlots[pickedIndex]].transform.position;
                     spawnedItem.transform.position += spawnedItem.placementOffset;
                     spawnedItem.transform.parent = parent;
                     placedIndices.Add(openSlots[pickedIndex]);
