@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8271381124759472498}
   - component: {fileID: 5830591976776220100}
+  - component: {fileID: 7308733425040515997}
   m_Layer: 0
   m_Name: DisplayCaseEva_Weenie
   m_TagString: Untagged
@@ -47,7 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistanceBtwObjs: 12
-  placementOffset: {x: 0, y: 0, z: 0}
+  placementOffset: {x: 0, y: 1.09, z: 0}
+--- !u!114 &7308733425040515997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158651335457888982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359b80d1029fd404e94dcc891298a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1424591021604439667
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +72,6 @@ GameObject:
   - component: {fileID: 1424591021604439666}
   - component: {fileID: 1424591021604439567}
   - component: {fileID: 1424591021604439564}
-  - component: {fileID: 1424591021604439565}
   m_Layer: 0
   m_Name: ArmR
   m_TagString: Untagged
@@ -132,19 +144,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1424591021604439565
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424591021604439667}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1424591022237722198
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +155,6 @@ GameObject:
   - component: {fileID: 1424591022237722193}
   - component: {fileID: 1424591022237722194}
   - component: {fileID: 1424591022237722195}
-  - component: {fileID: 1424591022237722192}
   m_Layer: 0
   m_Name: EvaBody
   m_TagString: Untagged
@@ -232,19 +230,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1424591022237722192
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424591022237722198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1424591022381386245
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +241,6 @@ GameObject:
   - component: {fileID: 1424591022381386244}
   - component: {fileID: 1424591022381386241}
   - component: {fileID: 1424591022381386246}
-  - component: {fileID: 1424591022381386247}
   m_Layer: 0
   m_Name: ArmL
   m_TagString: Untagged
@@ -329,19 +313,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1424591022381386247
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424591022381386245}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1424591023071596656
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +324,6 @@ GameObject:
   - component: {fileID: 1424591023071596659}
   - component: {fileID: 1424591023071596556}
   - component: {fileID: 1424591023071596557}
-  - component: {fileID: 1424591023071596658}
   m_Layer: 0
   m_Name: EvaHead
   m_TagString: Untagged
@@ -426,19 +396,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1424591023071596658
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424591023071596656}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7807911890140784486
 GameObject:
   m_ObjectHideFlags: 0

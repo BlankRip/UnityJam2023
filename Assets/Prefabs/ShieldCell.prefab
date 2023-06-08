@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82830880598fe234d8e925f5e7646cd0, type: 2}
+  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -257,7 +257,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: aaf88cb3e47416844a2272c04e27461a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -340,7 +340,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: aaf88cb3e47416844a2272c04e27461a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -374,6 +374,8 @@ GameObject:
   - component: {fileID: 9053904663456009805}
   - component: {fileID: 4670988919318162535}
   - component: {fileID: 7168956102142097909}
+  - component: {fileID: 1361650006105294014}
+  - component: {fileID: 4466823708749556646}
   m_Layer: 0
   m_Name: ShieldCell
   m_TagString: Untagged
@@ -444,3 +446,31 @@ MonoBehaviour:
   pickUpAudio:
     mixerGroup: {fileID: -6147095263347948559, guid: 11583ef3e207e0840b3ea48c6d769349, type: 2}
     clip: {fileID: 8300000, guid: 60a47225eaa0ce6409ffb90aa7111109, type: 3}
+--- !u!54 &1361650006105294014
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636759766955550230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4466823708749556646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636759766955550230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359b80d1029fd404e94dcc891298a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574754205370227922}
   - component: {fileID: 6114780300681996388}
+  - component: {fileID: 4755076244946540562}
   m_Layer: 0
   m_Name: Papers_Weenie
   m_TagString: Untagged
@@ -54,7 +55,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistanceBtwObjs: 12
-  placementOffset: {x: 0, y: 0, z: 0}
+  placementOffset: {x: 0, y: 0.89, z: 0}
+--- !u!114 &4755076244946540562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450765511480971126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359b80d1029fd404e94dcc891298a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7524735101739837365
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +79,6 @@ GameObject:
   - component: {fileID: 7524735101739837364}
   - component: {fileID: 7524735101739837369}
   - component: {fileID: 7524735101739837366}
-  - component: {fileID: 7524735101739837367}
   m_Layer: 0
   m_Name: Paper (1)
   m_TagString: Untagged
@@ -139,20 +151,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735101739837367
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735101739837365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735101891654342
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +259,6 @@ GameObject:
   - component: {fileID: 7524735102417357731}
   - component: {fileID: 7524735102417357732}
   - component: {fileID: 7524735102417357733}
-  - component: {fileID: 7524735102417357730}
   m_Layer: 0
   m_Name: Paper (7)
   m_TagString: Untagged
@@ -312,7 +309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70bb277a0afcf744e957e50049790a5f, type: 2}
+  - {fileID: 2100000, guid: db63e05a0bb2610489b0c0c1d573f9f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,20 +331,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735102417357730
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735102417357728}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735102665467230
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +342,6 @@ GameObject:
   - component: {fileID: 7524735102665467201}
   - component: {fileID: 7524735102665467202}
   - component: {fileID: 7524735102665467203}
-  - component: {fileID: 7524735102665467200}
   m_Layer: 0
   m_Name: Paper (5)
   m_TagString: Untagged
@@ -432,20 +414,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735102665467200
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735102665467230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735102713258891
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +425,6 @@ GameObject:
   - component: {fileID: 7524735102713258890}
   - component: {fileID: 7524735102713258895}
   - component: {fileID: 7524735102713258892}
-  - component: {fileID: 7524735102713258893}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
@@ -530,20 +497,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735102713258893
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735102713258891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735103008701943
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +508,6 @@ GameObject:
   - component: {fileID: 7524735103008701942}
   - component: {fileID: 7524735103008701947}
   - component: {fileID: 7524735103008701944}
-  - component: {fileID: 7524735103008701945}
   m_Layer: 0
   m_Name: Paper (4)
   m_TagString: Untagged
@@ -606,7 +558,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70bb277a0afcf744e957e50049790a5f, type: 2}
+  - {fileID: 2100000, guid: db63e05a0bb2610489b0c0c1d573f9f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -628,20 +580,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735103008701945
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735103008701943}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735103156793838
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +591,6 @@ GameObject:
   - component: {fileID: 7524735103156793745}
   - component: {fileID: 7524735103156793746}
   - component: {fileID: 7524735103156793747}
-  - component: {fileID: 7524735103156793744}
   m_Layer: 0
   m_Name: Paper (6)
   m_TagString: Untagged
@@ -726,20 +663,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735103156793744
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735103156793838}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735103274601828
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +674,6 @@ GameObject:
   - component: {fileID: 7524735103274601831}
   - component: {fileID: 7524735103274601832}
   - component: {fileID: 7524735103274601833}
-  - component: {fileID: 7524735103274601830}
   m_Layer: 0
   m_Name: Paper (3)
   m_TagString: Untagged
@@ -824,20 +746,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735103274601830
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735103274601828}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7524735103284993719
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +757,6 @@ GameObject:
   - component: {fileID: 7524735103284993718}
   - component: {fileID: 7524735103284993723}
   - component: {fileID: 7524735103284993720}
-  - component: {fileID: 7524735103284993721}
   m_Layer: 0
   m_Name: Paper (2)
   m_TagString: Untagged
@@ -922,17 +829,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7524735103284993721
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7524735103284993719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}

@@ -107,6 +107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99432032844516251}
+  - component: {fileID: 1896496592454715091}
+  - component: {fileID: 2501412623091128434}
   m_Layer: 0
   m_Name: Cylinder_Weenie
   m_TagString: Untagged
@@ -132,6 +134,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1896496592454715091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99432032844516250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53da9a08fe2fcb48bc2797245394ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceBtwObjs: 12
+  placementOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &2501412623091128434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99432032844516250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359b80d1029fd404e94dcc891298a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &99432033416734124
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +269,6 @@ GameObject:
   - component: {fileID: 99432033790196223}
   - component: {fileID: 99432033790196194}
   - component: {fileID: 99432033790196193}
-  - component: {fileID: 99432033790196192}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
@@ -314,17 +341,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &99432033790196192
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99432033790196222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
