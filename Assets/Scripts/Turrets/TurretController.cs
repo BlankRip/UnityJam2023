@@ -23,6 +23,8 @@ namespace Gameplay.AI
 
         private bool targetDetected = false;
 		private bool poweredUp = true;
+        private Quaternion lastRotation = Quaternion.identity;
+        private Quaternion targetRotation;
 
         Transform turretTarget;
         AudioSource turretAudioSource;
@@ -41,12 +43,14 @@ namespace Gameplay.AI
             if (other.transform.gameObject.CompareTag("Player"))
             {
                 targetDetected = false;
+                targetRotation = Quaternion.LookRotation(turretTarget.position - turretHead.position);
             }
         }
 
 		private void Start()
 		{
 			turretAudioSource = GetComponent<AudioSource>();
+            turretHead.rotation = lastRotation;
 		}
 
 		private void Update()
@@ -70,14 +74,14 @@ namespace Gameplay.AI
             {
                 Vector3 targetDirection = turretTarget.position - turretHead.position;
                 targetDirection.y = 0f;
-                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                targetRotation = Quaternion.LookRotation(targetDirection);
                 turretHead.rotation = Quaternion.Slerp(turretHead.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                lastRotation = turretHead.rotation;
             }
         }
         private void Standby()
         {
-            Quaternion initialRotation = Quaternion.identity;
-            turretHead.rotation = Quaternion.Slerp(turretHead.rotation, initialRotation, rotationSpeed * Time.deltaTime);
+            turretHead.rotation = Quaternion.Slerp(turretHead.rotation, lastRotation, rotationSpeed * Time.deltaTime);
         }
 
         private void TurretShoot()
