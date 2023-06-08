@@ -398,8 +398,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -598,6 +598,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2535264929719632755, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535264929719632755, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535264929719632755, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111500802478356788, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111500802478356788, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8816621471665305370, guid: 18853db7b3a699c41966a0047757d0c9, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -737,6 +757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc30ecdd8a779b4682609401404079f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testData:
+    mixerGroup: {fileID: 0}
+    clip: {fileID: 0}
 --- !u!4 &1980364429
 Transform:
   m_ObjectHideFlags: 0
