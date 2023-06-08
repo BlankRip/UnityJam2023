@@ -40,7 +40,6 @@ namespace Gameplay.LevelGeneration
 
         public void PlaceObjects(MazeRenderer caller)
         {
-            Debug.LogError("Ent");
             CreateParentObjects();
             materialObject.ResetMaterialsList();
             startPoint = new GameObject("Start Point").transform;
@@ -183,11 +182,9 @@ namespace Gameplay.LevelGeneration
 
         private void MakeGameReadyToPlay()
         {
-            Debug.LogError("GenComplete, Mkaing player enabled");
             pauseObject.gameObject.SetActive(true);
             blackScreen.SetActive(false);
             playerObject.TeleportPlayerToPosition(startPoint.position);
-            Debug.LogError("All Should work");
             Destroy(GetComponent<MazeRenderer>());
             Destroy(this);
         }
