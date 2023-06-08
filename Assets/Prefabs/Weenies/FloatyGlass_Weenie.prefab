@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: 8cf3b856658b4f14abee713ce888d4cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: 8cf3b856658b4f14abee713ce888d4cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -256,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: 8cf3b856658b4f14abee713ce888d4cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -353,7 +353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: 8cf3b856658b4f14abee713ce888d4cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -450,7 +450,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
+  - {fileID: 2100000, guid: 8cf3b856658b4f14abee713ce888d4cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 691104840544465341}
   - component: {fileID: 3149416905029272843}
   m_Layer: 0
-  m_Name: G_DummyWeeni
+  m_Name: FloatyGlass_Weenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

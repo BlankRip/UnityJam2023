@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8574754205370227922}
   - component: {fileID: 6114780300681996388}
   m_Layer: 0
-  m_Name: J_DummyWeeni
+  m_Name: Papers_Weenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

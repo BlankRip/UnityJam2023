@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1134481101883526907}
   - component: {fileID: 3287004583271643725}
   m_Layer: 0
-  m_Name: F_DummyWeeni
+  m_Name: FloatyNormal_Weenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

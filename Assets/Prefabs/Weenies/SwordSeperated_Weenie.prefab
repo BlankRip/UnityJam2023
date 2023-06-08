@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 2202998203251194632}
   - component: {fileID: 4373323976505135038}
   m_Layer: 0
-  m_Name: I_DummyWeeni
+  m_Name: SwordSeperated_Weenie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
