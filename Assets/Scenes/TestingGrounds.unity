@@ -619,7 +619,7 @@ MonoBehaviour:
   celing: {fileID: 0}
   wallHight: 4
   wall: {fileID: 5010670781529445629, guid: 9b4e7a0b0f6db4e4da8bbccc2f2d61c5, type: 3}
-  useSeed: 0
+  useSeed: 1
   seed: {fileID: 11400000, guid: ac16b5b8b9c434a469ecdf7278c6f6e0, type: 2}
 --- !u!4 &2130923950
 Transform:
@@ -649,21 +649,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 8312630792411503180, guid: 69047e2b93819454f811dce04f946d8d, type: 3}
-  numberOfGodTurrets: 4
+  numberOfGodTurrets: 3
   turretPrefab: {fileID: 7309961877955390227, guid: 59e8fd327127d0343986f54eb0e73ef5, type: 3}
   materialObject: {fileID: 11400000, guid: c9854656c8de5404b98cbe0338dd91b3, type: 2}
-  numberOfMortalTurrets: 3
-  turretSwitchPrefab: {fileID: 3615763680105203900, guid: 0b73aaac7cd356948bc4f935993c422a, type: 3}
+  numberOfMortalTurrets: 4
+  turretSwitchPrefab: {fileID: 998330681546112729, guid: c0f153f106158fd459ef6ca83fb9f019, type: 3}
   numberOfSheildPickUps: 2
-  sheildPickupPrefab: {fileID: 5143253790117851625, guid: 2f7670f8935b04940b768b2dcc1247c2, type: 3}
-  numberOfWeenies: 3
+  sheildPickupPrefab: {fileID: 4670988919318162535, guid: d1bad361316f9d7418c77fc4b346f1d2, type: 3}
+  numberOfWeenies: 6
   weenieObjects:
-  - {fileID: 2832933109484888129, guid: 76b6f95c8d1dc7242a6d14c773444a02, type: 3}
-  - {fileID: 3078350785468751776, guid: 9d0c795f51270d54eaacfe2ae7aa50fc, type: 3}
-  - {fileID: 3797110057197957325, guid: b1f2a7bb127f17640b573009ceca0ec0, type: 3}
-  - {fileID: 6213647938856464935, guid: 7659d4cf757c7fa45bbf432db57c3a18, type: 3}
-  - {fileID: 8987520396863394041, guid: 8e86de25ad5f6d146bcf5fccd89f54dc, type: 3}
-  canPlaceWeenieNearStart: 0
+  - {fileID: 5830591976776220100, guid: 7783fdae323e2a04d966ddb78b8adbdf, type: 3}
+  - {fileID: 6837905698791547081, guid: 5a7362d18b13a49498b678015f855008, type: 3}
+  - {fileID: 1757998294494539957, guid: 7341b07ce19dbf742afa5302ed5d5b70, type: 3}
+  - {fileID: 3149416905029272843, guid: d7389e115daa3b3449d000b1b17cf188, type: 3}
+  - {fileID: 3287004583271643725, guid: 777a8a69273570342bf1f17d480cbe07, type: 3}
+  - {fileID: 6114780300681996388, guid: 6b98d41e53d0a814db00334c7cea5a95, type: 3}
+  - {fileID: 6998120300561644261, guid: 6f7d46b214659f34dbf75fb31040c44e, type: 3}
+  - {fileID: 4373323976505135038, guid: e5a3863d1a2ab9d49a84d5e7c3a1a587, type: 3}
+  - {fileID: 5158309000406553582, guid: 4e8a2f326f3e45a45b7403c934df72c8, type: 3}
+  canPlaceWeenieNearStart: 1
   blackScreen: {fileID: 1788007833}
   pauseObject: {fileID: 1788007834}
   playerObject: {fileID: 1330946298}
