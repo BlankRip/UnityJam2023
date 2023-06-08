@@ -155,7 +155,7 @@ namespace Gameplay.LevelGeneration
                     spawnedItem.transform.position = floorTiles[pickedIndex].transform.position;
                     spawnedItem.transform.position += spawnedItem.placementOffset;
                     spawnedItem.transform.parent = parent;
-                    placedIndices.Add(pickedIndex);
+                    placedIndices.Add(openSlots[pickedIndex]);
                     openSlots.RemoveAt(pickedIndex);
                     return true;
                 }
@@ -184,9 +184,9 @@ namespace Gameplay.LevelGeneration
         private void MakeGameReadyToPlay()
         {
             Debug.LogError("GenComplete, Mkaing player enabled");
-            playerObject.TeleportPlayerToPosition(startPoint.position);
             pauseObject.gameObject.SetActive(true);
             blackScreen.SetActive(false);
+            playerObject.TeleportPlayerToPosition(startPoint.position);
             Debug.LogError("All Should work");
             Destroy(GetComponent<MazeRenderer>());
             Destroy(this);
