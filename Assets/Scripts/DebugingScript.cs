@@ -10,6 +10,7 @@ namespace Gameplay
     {
         private InputAction debugAction;
         [SerializeField] AudioData testData;
+        [SerializeField] GameObject obj;
 
         private void Start()
         {
@@ -19,7 +20,8 @@ namespace Gameplay
         private void Update()
         {
             if(debugAction.WasReleasedThisFrame())
-                Sound2D.Instance.PlayOneShotAudio(testData);
+                obj.SetActive(!obj.activeSelf);
+                //Sound2D.Instance.PlayOneShotAudio(testData);
         }
     }
 }

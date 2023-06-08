@@ -11,7 +11,13 @@ namespace Gameplay
 
 		private void Awake()
 		{
-			playerInput = GetComponent<PlayerInput>();
+            if(playerInput == null)
+            {
+			    playerInput = GetComponent<PlayerInput>();
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else
+                Destroy(this.gameObject);
 		}
 
 		public static PlayerInput GetPlayerInput()
