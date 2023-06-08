@@ -11,6 +11,7 @@ namespace Gameplay.AI
     public class TurretSwitch : InteractableBase
     {
 		[SerializeField] TurretMaterialObject turretMaterailsList;
+		[SerializeField] Renderer baseObjRendrer;
 		[SerializeField] AudioData turretPowerDownAudio;
 		
 		[Header("Only assign for debugging")]
@@ -30,7 +31,7 @@ namespace Gameplay.AI
 				int randomIndex = MazeGenerator.GetRandomFromRange(0, turretMaterailsList.materials.Count);
 				Material randomMaterial = turretMaterailsList.materials[randomIndex];
 
-				GetComponent<Renderer>().material = randomMaterial;
+				baseObjRendrer.material = randomMaterial;
 				linkedTurret.SetTurretColor(randomMaterial);
 
 				turretMaterailsList.materials.RemoveAt(randomIndex);
