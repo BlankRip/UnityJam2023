@@ -21,6 +21,6 @@ MonoBehaviour:
   InitialMaterialsList:
   - {fileID: 2100000, guid: 8e2c30c3106110a499efacbfde0d81d5, type: 2}
   - {fileID: 2100000, guid: e67a828b0ecc96f428cd06196bf07264, type: 2}
-  - {fileID: 2100000, guid: 70bb277a0afcf744e957e50049790a5f, type: 2}
+  - {fileID: 2100000, guid: ac14ed326bf453f4a96a7e9b46fb0394, type: 2}
   - {fileID: 2100000, guid: ef6d2fe5b0a755b41b4393c187b2ecf4, type: 2}
   - {fileID: 2100000, guid: b8254ef6639a11b47b98a50ec3989fa2, type: 2}
