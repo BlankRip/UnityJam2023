@@ -57,12 +57,12 @@ public class PlayerShieldHandler : MonoBehaviour
 			currentShield -= shieldDepletionAmount * Time.deltaTime;
 			currentShield = Mathf.Max(currentShield, 0);
 			shieldSlider.value = currentShield;
+			if(currentShield <= 0.0f)
+				CloseSheild();
 		}
 		else if (ShieldTriggerInput.WasReleasedThisFrame())
 		{
-			targetSize = initialSize;
-			lerpComplete = false;
-			Sound2D.Instance.PlayOneShotAudio(offAudio);
+			CloseSheild();
 		}
 
 		if(lerpComplete)
@@ -71,6 +71,14 @@ public class PlayerShieldHandler : MonoBehaviour
 		float distance = (shieldGameObject.transform.localScale - targetSize).sqrMagnitude;
 		if(distance < 0.03 * 0.03)
 			lerpComplete = true;
+	}
+
+	private void CloseSheild()
+	{
+		targetSize = initialSize;
+		lerpComplete = false;
+		if(currentShield > 0.0f)
+			Sound2D.Instance.PlayOneShotAudio(offAudio);
 	}
 
 	public void ShieldTakeDamage(float damage)
