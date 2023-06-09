@@ -10,8 +10,8 @@ namespace Gameplay.AI
 		public static TurretProjectilePool instance;
 
 		public GameObject projectilePrefab;
-		public List<GameObject> pooledObjects;
 		public int countToPool = 20;
+		private List<GameObject> pooledObjects;
 
 		private void Awake()
 		{

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gameplay.UI;
 
 namespace Gameplay.AI
 {
@@ -8,8 +9,6 @@ namespace Gameplay.AI
 	{
 		public float lifetime;
 		private float spawnTime;
-
-		private bool dealDamage = false;
 
 		private void OnEnable()
 		{
@@ -20,18 +19,8 @@ namespace Gameplay.AI
 		{
 			if(other.gameObject.CompareTag("Player"))
 			{
-				dealDamage = true;
 				this.gameObject.SetActive(false);
-				dealDamage = false;
-			}
-		}
-
-		private void OnCollisionExit(Collision other) 
-		{
-			if(other.gameObject.CompareTag("Player"))
-			{
-				this.gameObject.SetActive(false);
-				dealDamage= false;
+				GameOver.Instance.EndGame();
 			}
 		}
 
@@ -41,11 +30,6 @@ namespace Gameplay.AI
 			{
 				gameObject.SetActive(false);
 			}
-		}
-
-		public bool GetDamageTriggerStatus()
-		{
-			return dealDamage;
 		}
 	}
 }

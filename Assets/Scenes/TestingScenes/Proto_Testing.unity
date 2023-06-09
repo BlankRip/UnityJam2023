@@ -1094,7 +1094,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2846024392555279579, guid: c5760b5853549bd43bd2a740aadc81d9, type: 3}
-  pooledObjects: []
   countToPool: 30
 --- !u!1001 &1188486427
 PrefabInstance:
