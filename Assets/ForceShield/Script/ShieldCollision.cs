@@ -37,10 +37,13 @@ public class ShieldCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if(_collisionTag.Length == 0)
+            return;
+        
         for (int i = 0; i < _collisionTag.Length; i++)
         {
 
-            if (_collisionTag.Length > 0 || collision.transform.CompareTag(_collisionTag[i]))
+            if (collision.transform.CompareTag(_collisionTag[i]))
             {
                 ContactPoint[] _contacts = collision.contacts;
                 for (int i2 = 0; i2 < _contacts.Length; i2++)
