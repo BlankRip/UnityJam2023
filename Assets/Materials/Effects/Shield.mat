@@ -110,7 +110,7 @@ Material:
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _HitColor: {r: 0.2009167, g: 0.4056604, b: 0.30901715, a: 0.83137256}
-    - _HitPosition: {r: -0.2993094, g: -0.17109838, b: -0.36213154, a: 0}
+    - _HitPosition: {r: 0.42458835, g: 0.009255056, b: -0.2638922, a: 0}
     - _LowColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}

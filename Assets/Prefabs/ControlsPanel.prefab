@@ -419,13 +419,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: '* Find Exit Portal to Escape the maze
 
-    * Turn On & Off your sheild
+    * Turn On & Off your shield
     to protect yourself from turret fire.
 
     * Pick up Shield Cells to Regain lost
     shield energy.
 
-    * Find and turn Off turret Power Switches to diable curresponding
+    * Find and turn Off turret Power Switches to disable corresponding
     turret linked to that switch (switch & turret body color will match)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 883be63635494944c9ac76d31d5fa1a8, type: 2}
@@ -838,7 +838,7 @@ MonoBehaviour:
 
     Interact - South Button
 
-    Sheild
+    Shield
     On (hold) - West Button
 
     Pause - Select Button'
@@ -983,7 +983,7 @@ MonoBehaviour:
 
     Interact - E
 
-    Sheild
+    Shield
     On (hold) - Space
 
     Pause - Escape'
