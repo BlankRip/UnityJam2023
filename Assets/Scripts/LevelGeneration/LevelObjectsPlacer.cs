@@ -9,6 +9,7 @@ namespace Gameplay.LevelGeneration
     public class LevelObjectsPlacer : MonoBehaviour
     {
         private Transform startPoint;
+        [SerializeField] int maxRetryPlacementIterations = 15;
         [SerializeField] ObjectPlacementConstrains endPoint;
 
         [Space]
@@ -144,9 +145,8 @@ namespace Gameplay.LevelGeneration
         private bool TryPlaceItem(ref List<int> placedIndices, ref ObjectPlacementConstrains spawnedItem, ref Transform parent)
         {
             int iterations = 0;
-            int maxPlacementIterations = 5;
             int pickedIndex = 0;
-            while (iterations < maxPlacementIterations)
+            while (iterations < maxRetryPlacementIterations)
             {
                 pickedIndex = MazeGenerator.GetRandomFromRange(0, openSlots.Count);
                 if(CanPlace(ref placedIndices, ref spawnedItem, openSlots[pickedIndex]))

@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53da9a08fe2fcb48bc2797245394ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceBtwObjs: 8
+  minDistanceBtwObjs: 30
   placementOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &7168956102142097909
 MonoBehaviour:

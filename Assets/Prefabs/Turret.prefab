@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53da9a08fe2fcb48bc2797245394ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceBtwObjs: 4
+  minDistanceBtwObjs: 25
   placementOffset: {x: 0, y: 0, z: 0}
 --- !u!82 &7494140349071238883
 AudioSource:

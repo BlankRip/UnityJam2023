@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53da9a08fe2fcb48bc2797245394ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceBtwObjs: 6
+  minDistanceBtwObjs: 38
   placementOffset: {x: -0.010000229, y: -0.62, z: 1.9000001}
 --- !u!135 &8622134957227467251
 SphereCollider:
