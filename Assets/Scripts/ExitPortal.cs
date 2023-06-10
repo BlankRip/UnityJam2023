@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
-    public class ExitPortal : MonoBehaviour
+    public class ExitPortal : InteractableBase
     {
-        private void OnTriggerEnter(Collider other)
+        public override void Interact(PlayerController caller)
         {
-            if(other.CompareTag("Player"))
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            base.Interact(caller);
         }
     }
 }
